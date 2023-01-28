@@ -1,0 +1,86 @@
+.banner{
+    height:100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    
+    
+}
+
+.banner:before{
+    content:"";
+    background: url("../assest//Rectangle\ 3875.png") no-repeat center;
+    background-size:cover;
+    position:absolute;
+    left: 0;top:0;right: 0;
+    width: 100%;
+    height: inherit; 
+    z-index:-2
+}
+
+.banner:after{
+    content:"";
+    background: rgba(33, 127, 237, 0.45);
+    position: absolute;
+    left: 0;top:0;
+    right: 0;
+
+    width: 100%;
+    height: inherit; 
+    z-index: -1;
+
+}
+.banner-content{
+    --var-width:10%;
+   max-width: 700px; 
+   margin-left: 4rem;
+
+   
+}
+.banner-content>p{
+    color: white;
+     margin-bottom: 1.5rem;
+     font-weight: 500;
+font-size: 24px;
+line-height: 149.02%;
+}
+.banner-content>p>span{
+    color: #FDE958;
+   
+     font-weight: 500;
+font-size: 24px;
+line-height: 149.02%;
+}
+.banner-content>h1{
+    color: white;
+    font-weight: 500;
+font-size: 48px;
+line-height: 72px
+}
+
+@media screen and (max-width: 600px) {
+    .banner-content>p{
+    
+    margin-bottom: 0.5rem;
+   
+font-size: 18px;
+line-height: 52px
+}
+.banner-content>p>span{
+
+    font-size: 16px;
+line-height: 52px
+}
+.banner-content>h1{
+   
+   
+font-size: 42px;
+line-height: 52px
+}
+.banner-content{
+    
+   margin-left: 1rem;
+
+   
+}
+}

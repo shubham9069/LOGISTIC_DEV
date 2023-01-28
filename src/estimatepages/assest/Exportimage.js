@@ -1,0 +1,5 @@
+export {default as wallframe} from './wallframe.png'
+export {default as furniture} from './furniture.png'
+export {default as kitchen} from './kitchen.png'
+export {default as vehical} from './vehical.png'
+export {default as sofa} from './sofa.png'

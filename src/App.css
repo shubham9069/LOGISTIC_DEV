@@ -1,38 +1,160 @@
-.App {
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+
+}
+#root{
+margin: 0;
+padding: 0;
+
+}
+body {
+  margin: 0;
+  padding: 0;
+ 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.link-a{
+  all:unset
+  
+}
+a:hover{
+  cursor: pointer;
+}
+ 
+.section-margin{
+  margin: 4rem 4rem !important ;
+}
+.section-padding{
+  padding: 2rem 4rem !important ;
+}
+.section-marginX{
+margin: 0 4rem !important
+}
+.btn-design{
+  padding: 0.6rem 1.5rem !important ;
+  border: none !important;
+  color:white !important;
+  font-size: 16px;
+line-height: 19px; border-radius: 10px;
+background: #088FD8;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.center-div{
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content:center;
+}
+.form-input{
+  border:none !important;
+  border-bottom: 2px solid #E3E3E3 !important;
+backdrop-filter: blur(3px);
+border-radius: 0 !important;
+   
+
+}
+.input-name{
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  
+}
+.lighptgrey-p{
+  font-weight: 500;
+  line-height: 24px;
+  color: #B5ABAB;
 }
 
-.App-link {
-  color: #61dafb;
+.form-input:active{
+  outline: none !important;
+  border-radius: 0 !important;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+
+.text-area{
+  font-size: .875rem; 
+  line-height: 1.25rem;
+  font-weight: 600;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid  #e5e7eb; 
+   
+  height: 10rem;
+  width:100%;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.form-btn{
+  background: #315CB3 !important;
+  box-shadow: 0px 8px 24px -2px rgba(11, 47, 138, 0.6) !important;
+  border-radius: 16px !important;
+  width: 100% !important;
+  padding: 1rem !important;
+  max-width: 400px;
+  display: block !important;
+  margin: 4rem auto;
+}
+.section-subheading{
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+
+}
+
+@media screen and (max-width:1000px) {
+  .section-margin{
+    margin: 2rem 2rem !important ;
   }
-  to {
-    transform: rotate(360deg);
+  .section-padding{
+    padding: 1rem 2rem !important ;
+  }
+  .section-marginX{
+  margin: 0 2rem !important
   }
 }
+
+@media screen and (max-width:600px) {
+  .section-margin{
+    margin: 1rem 1rem !important ;
+  }
+ 
+  .section-marginX{
+  margin: 0 1rem !important
+  }
+  .container{
+    width: 100% !important;
+    
+  }
+  .section-subheading{
+    font-size: 20px !important;
+    margin: 0 1rem 1rem 1rem !important;
+  
+  }
+  
+.section-heading {
+ 
+  
+  font-size: 26px !important;
+  
+}
+.lighptgrey-p{
+  font-weight: 500;
+  line-height: 20px;
+  font-size: 14px;
+  color: #B5ABAB;
+}
+}
+
+

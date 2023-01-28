@@ -1,0 +1,33 @@
+.unique-selling{
+    justify-content: space-between;
+}
+
+.usp-tiles {
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 3.56872px rgb(0 0 0 / 25%);
+    margin : 2rem 0 !important;
+}
+
+.usp-icon {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: #A1D4F0;
+}
+
+.group-banner{
+    background: url('../assest//Group.png') no-repeat center ;
+    background-size:contain;
+    height: 30vw;
+    width: 100%;
+}
+
+@media  screen and (max-width:1000px) {
+   .unique-selling{
+    flex-direction: column-reverse
+   }
+   .width1000{
+    margin: 0 auto;
+   }
+}

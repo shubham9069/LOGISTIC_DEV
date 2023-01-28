@@ -1,0 +1,116 @@
+
+
+.selectitem{
+    /* border: 1px solid black  */
+}
+
+
+.selectitem-heading{
+    flex-direction: column;
+   
+    
+    max-width: 560px;
+    text-align: center;
+    margin :0 auto ;
+    margin-bottom:3rem;
+}
+.selectitem-heading>h3{
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 23px;
+    margin-bottom: 1.5rem;
+    
+}
+.selectitem-heading>p,.selectitem-btn-text>p{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 23px;
+    /* or 21px */
+    
+    text-align: center;
+    
+    color: #817979;
+   
+    
+}
+.selectitem-box{
+    grid-gap:20px;
+    flex-wrap: wrap;
+}
+.selectitem-card1{
+    box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    width:300px;
+    
+}
+
+
+.selectitem-card-img1,.selectitem-card-img2,.selectitem-card-img3{
+    height: 100px;
+    width: inherit;
+}
+.selectitem-card-img1>p,.selectitem-card-img2>p,.selectitem-card-img3>p{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    
+    color: #FFFFFF;
+    
+}
+.selectitem-card-img1::before{
+    content:"";
+    background:url('../assest/./furniture.png') no-repeat center;
+    background-size: cover;
+    position: absolute;
+   
+    height: inherit;
+    width: inherit;
+    z-index: -1;
+}
+.selectitem-card-img2::before{
+    content:"";
+    background:url('../assest/./kitchen.png') no-repeat center;
+    background-size: cover;
+    position: absolute;
+   
+    height: inherit;
+    width: inherit;
+    z-index: -1;
+}
+.selectitem-card-img3::before{
+    content:"";
+    background:url('../assest/./vehical.png') no-repeat center;
+    background-size: cover;
+    position: absolute;
+   
+    height: inherit;
+    width: inherit;
+    z-index: -1;
+}
+.selectitem-card-content{
+    border-bottom: 1px solid #DCDCDC;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    grid-gap:40px
+}
+.selectitem-card-content>div{
+   
+   grid-gap:20px
+   
+}
+.selectitem-btn {
+    /* border: 1px solid red; */
+    grid-gap:20px
+}
+.selected-button{
+    padding: 0.5rem 2.5rem;
+    border-radius: 11px;
+    border: none;
+    margin-bottom: 1.5rem;
+}
+
+.modal-attr{
+    flex-direction: column;
+}

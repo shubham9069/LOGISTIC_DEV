@@ -1,0 +1,5 @@
+export {default as Signup} from './signup/Signup'
+export {default as Otp} from './signup/Otp'
+export {default as Signin} from './signin/Signin'
+export {default as ForgetPassword} from './forgetpassword/ForgetPassword'
+export {default as CheckEmail} from './forgetpassword/CheckEmail'

@@ -1,0 +1,66 @@
+
+
+.signup{
+ background-color: #315CB3;
+ padding: 4rem;
+ 
+}
+.signup>div{
+ background-color: white;
+ max-width: 700px;
+ padding:4rem;
+ 
+}
+.signup>div>h1{
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 2rem;
+    color: #315CB3;
+}
+.signup>div>p{
+    
+    margin-bottom: 2rem;
+    
+}
+.signup-bottom{
+    border-top: 1px solid #E3E3E3;
+    flex-direction: column;
+   
+}
+.signup-bottom>p{
+    background: white;
+    padding: 0.5rem 1.5rem;
+    position: relative;
+    top: -16px;
+}
+.signup-bottom>div{
+   margin-bottom: 1.5rem;
+}
+
+.signup-with-img{
+    width:30px;
+    margin: 0 1rem ;
+    cursor: pointer;
+}
+.signup-span{
+    font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+/* identical to box height */
+
+
+color: #0B2F8A;
+}
+@media screen and (max-width:600px){
+    .signup{
+       
+        padding: 2rem;
+        
+       }
+       .signup>div{
+       
+        padding:2rem;
+        
+       }
+    
+}

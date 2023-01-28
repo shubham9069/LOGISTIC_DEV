@@ -1,0 +1,99 @@
+
+.feelfree{
+    font-weight: 500;
+font-size: 36px;
+line-height: 52px;
+color:white !important;
+}
+.heading{
+    font-weight: 500;
+font-size: 16px;
+line-height: 155.02%;
+}
+
+.contactleft-text{
+    font-weight: 400;
+font-size: 16px ;
+line-height: 155.02%;
+}
+
+.text-white{
+    color:white !important;
+}
+.contact-icons {
+    background: white;;
+    padding: 1rem;
+    border-radius: 20px;
+}
+.founder-icon {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}
+.contact-form{
+    background:white;
+    border-radius: 16px;
+    padding: 2rem ;
+}
+.submit-btn{
+    width: 100%;
+    padding: 1rem 1rem !important;
+    border: none !important;
+    color:white !important;
+    font-size: 1.25rem !important;
+    background: #D2584D !important;
+  border-radius: 7px !important;
+}
+
+.flat-rent{
+    background: #F1F1F1;
+    margin-top: 8rem 
+    
+}
+.flat-rent-a{
+    display: flex;
+    grid-gap: 20px ;
+    justify-content: center;
+    align-items: center;
+    
+}
+.flat-rent-a>a{
+    width:100%;
+    text-align: center;
+    font-weight: 800 !important;
+font-size: 16px !important;
+line-height: 19px
+}
+.packer{
+    margin-bottom:6rem                                          /*due to 2rem padding*/ 
+}
+.packer-and-mover{
+    display: flex;
+    grid-gap: 20px ;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+.packer-and-mover>a{
+    width:100%;
+    text-align: center;
+    font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+}
+
+@media screen and (max-width:1000px) {
+    .packer-and-mover{
+        width:100% !important;
+        max-width:none !important;
+        min-width: none !important;
+    }
+    
+}
+@media screen and (max-width:600px) {
+    .contact-form{
+       
+        padding: 1rem ;
+    }
+    
+}
