@@ -1,0 +1,19 @@
+
+
+
+
+
+
+
+.question>div{
+    display: flex;
+     background: #F6F6F6;;
+     padding: 1.5rem ;
+     align-items: center;
+     justify-content: space-between;
+}
+.question>div>p{
+    margin:0
+   
+}
+

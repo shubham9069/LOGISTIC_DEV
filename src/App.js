@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
 import { Routes,Route,Outlet, Navigate } from 'react-router-dom'
 import './App.css'
-import { GetEstimate1, GetEstimate2, Rooms, Selectitem } from './estimatepages/Exportfiles'
+import { GetEstimate1, GetEstimate2, OrderPlace, Rooms, Selectitem } from './estimatepages/Exportfiles'
 import {Homepage,NavigationBar,Footer} from './homepage/Exportfile'
-import { Signup,Signin, ForgetPassword, CheckEmail, Otp } from './pages/Exportfile'
+import { Signup,Signin, ForgetPassword, CheckEmail, Otp, MyOrders } from './pages/Exportfile'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import PresistLogin from './pages/PresistLogin'
@@ -11,6 +11,7 @@ import RequiredAuth from './pages/Requiredlogin'
 import Requiredlogin from './pages/Requiredlogin'
 import { AuthContext } from './AuthProvider'
 import Fade from 'react-reveal/Fade';
+import Service1  from './pages/servicepage/service1'
 
 
 
@@ -22,6 +23,7 @@ const App = () => {
       <Routes>
       <Route  element={<PresistLogin/>}> 
       <Route path='/' element={<Homepage/>}/>
+      <Route path='/service1' element={<Service1/>}/>
       
       <Route path='/signin' element={<Fade top><Signin/></Fade>}/>
       <Route path='/otp' element={<Fade top><Otp/></Fade>}/>
@@ -34,6 +36,8 @@ const App = () => {
       <Route path='/getestimate2' element={<Fade top><GetEstimate2/></Fade>}/>
       <Route path='/rooms' element={<Rooms/>}/>
       <Route path='/selectitem/:room_id' element={<Selectitem/>}/>
+      <Route path='/orderplace' element={<OrderPlace/>}/>
+      <Route path='/myorders' element={<MyOrders/>}/>
       </Route>
       </Route>
       </Routes>

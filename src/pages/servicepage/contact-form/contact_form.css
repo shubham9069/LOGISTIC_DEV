@@ -1,0 +1,78 @@
+
+
+
+
+
+
+
+
+.contact-text{
+display: flex;
+justify-content: center;
+flex-direction: column;
+}
+.contact-text>h1{
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 38px;
+}
+.contact-text>h4{
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 38px;
+}
+.contact-text>p{
+    font-weight: 400;
+font-size: 14px;
+line-height: 19px;
+}
+
+.btn-calculatecost{
+    width: 100%;
+    padding: 1.5rem;
+    background: #088FD8;
+border-radius: 8px;
+text-align: center;
+color:white !important;
+}
+
+
+.from-contact{
+    margin-bottom:2rem !important
+}
+
+.icon-info{
+    display:flex;
+    grid-gap:50px;
+
+     background: #FEF6BC;
+     justify-content: space-evenly;
+    
+}
+.icon-info>div{
+   display:flex;
+   flex-direction: column;
+   align-items: center;;
+   justify-content: center;
+  
+    
+}
+.icon-info>div>img{
+  margin-bottom:1rem ;
+  max-width:50px
+    
+}
+.icon-info>div>p{
+  margin: 0;
+    
+}
+
+@media screen and (max-width:1000px) {
+    .contact-1200px{
+        flex-direction: column;
+    }
+
+    .contactform-1200px{
+
+    }
+}

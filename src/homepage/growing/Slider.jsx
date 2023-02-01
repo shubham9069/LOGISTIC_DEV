@@ -20,15 +20,15 @@ const Slider = () => {
         slidesPerGroup={4}
         loop={true}
         loopFillGroupWithBlank={true}
-        pagination={{
-          clickable: true,
-        }}
+        // pagination={{
+        //   clickable: true,
+        // }}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
         }}
-        navigation={true}
-        modules={[Navigation,Autoplay]}
+        // navigation={true}
+        modules={[Autoplay]}
  
         className="mySwiper"
       >

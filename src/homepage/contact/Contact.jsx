@@ -100,29 +100,6 @@ your busniess�
     </div>
 </div>
 
-<div className="section-padding flat-rent">
-<div className="container flat-rent-a">
-    <a>Flat For Rent In Banglore </a>
-    <a>Flat For Rent In Banglore </a>
-    <a>Flat For Rent In Banglore </a>
-    <a>Flat For Rent In Banglore </a>
-</div>
-
-
-
-</div>
-<div className="packer section-padding">
-{pack.map((element=>{
-    return <div className="container packer-and-mover" >
-    <a>packers And Mover In Banglore </a>
-    <a>Flat For Rent In Banglore </a>
-    <a>Flat For Rent In Banglore </a>
-    <a>Flat For Rent In Banglore </a>
-</div>
-}))}
-
-
-</div>
     </>
   )
 }

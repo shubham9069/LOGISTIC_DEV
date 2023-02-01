@@ -1,0 +1,86 @@
+
+.myorder{
+    box-shadow: 1px 0px 8px rgba(0, 0, 0, 0.25);
+padding: 1rem 1rem 0 1rem ;
+max-width:1000px !important;
+margin-bottom: 2rem ;
+}
+
+.myorder-box1{
+ background: #088FD8;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 1.5rem ;
+ border-radius: 8px;
+
+}
+.myorder-box1>p{
+ color:white;
+ margin: 0;
+ font-family:'Courier New', Courier, monospace;
+font-weight: lighter  !important;
+font-size: 20px;
+line-height: 28px
+
+}
+.myorder-box2{
+   
+    border-radius: 8px;
+    margin: 1rem 0;
+    padding: 2rem; 
+
+}
+.myorder-box-top,.myorder-box-middle,.myorder-box-lower{
+    display:flex;
+    
+
+}
+.myorder-box-top>div>h6,.myorder-box-middle>div>h6,.myorder-box-lower>div>h6{
+  
+    font-weight: 600;
+    font-size: 20px;
+
+}
+.myorder-box-top>div>p,.myorder-box-middle>div>p,.myorder-box-lower>div>p{
+  font-size:14px
+
+}
+.myorder-box-lower{
+    display:flex;
+    justify-content: space-between;
+
+}
+.viewdetails{
+    padding:0.5rem 1rem ;
+    border-radius: 8px;
+    background-color:white;
+    font-size:14px
+}
+.edit-inv-btn{
+    padding:0.5rem 1rem ;
+    border-radius: 8px;
+    background-color:#088FD8;
+    border:2px solid #088FD8;
+    color:white;
+    border:none;
+    margin-left: 1rem;
+    font-size:14px
+
+}
+
+.myorder-modal-top,.myorder-modal-middle,.myorder-modal-lower{
+    display:flex;
+    
+
+}
+.myorder-modal-top>div>h6,.myorder-modal-middle>div>h6,.myorder-modal-lower>div>h6{
+  
+    font-weight: 600;
+    font-size: 16px;
+
+}
+.myorder-modal-top>div>p,.myorder-modal-middle>div>p,.myorder-modal-lower>div>p{
+  font-size:12px
+
+}

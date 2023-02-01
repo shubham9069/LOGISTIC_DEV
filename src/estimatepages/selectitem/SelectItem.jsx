@@ -16,6 +16,7 @@ const SelectItem = () => {
     const {userToken} = useContext(AuthContext)
     const [product,setproduct] =useState([])
     const [productAtt,setproductAtt] =useState([])
+    const [enquiry_data,setEnquiry_Data] =useState([])
     const [isLoading,setIsLoading] = useState(true)
     const [enquiry_id,setEnquiry_id] = useState("")
     const [show, setShow] = useState(false);
@@ -47,6 +48,24 @@ const SelectItem = () => {
       
         
     }
+    const show_data=(input_name)=>{
+      
+      
+      
+      
+      var array = enquiry_data?.products[productAtt?.name]?.filter((element,index)=>{
+       
+        if(element.attribute_name==input_name)
+        {
+          return element.attribute_value
+        }
+      })
+      
+      const [first] =array
+      console.log(first)
+      return (first?.attribute_value)
+    } 
+   
 
     const getroom_attr =async()=>{
         try{
@@ -77,25 +96,59 @@ const SelectItem = () => {
          
 
     }
+    
 
     useEffect(() => {
         try{
             const strid = window.localStorage.getItem('enquiry_id');
             const enquiryid= JSON.parse(strid);
             setEnquiry_id(enquiryid);
-            getroom_attr()
+           
+            enqdata(enquiryid);
         }
         catch(err){
 
         }
         finally{
+          getroom_attr()
+          
             setIsLoading(false)
         }
 
     },[])
 
 
-   console.log(data)
+   
+   const enqdata =async(id)=>{
+  
+    try{
+        
+        const response= await axios({
+          method: "get",
+         url:`get_details?enquiry_id=${id}&room_id=${room_id}`,
+          headers:{
+           'Authorization': `Bearer ${userToken}`
+          }
+          } )
+         
+         if(response.status===200){
+          const data = response.data;
+          setEnquiry_Data(data.enquery)
+          Toast(data.message,response.status)
+          
+          
+         }
+       }
+       catch(err){
+        const error = err.response.data
+        Toast(error.message);
+        
+     
+     
+       }
+     
+
+}
 
 
     const update_product=async()=>{
@@ -119,6 +172,7 @@ const SelectItem = () => {
              
              if(response.status===200){
               const data = response.data;
+              enqdata(enquiry_id)
                 setdata()
                 setShow(false)
               Toast(data.message,response.status)
@@ -155,12 +209,13 @@ const SelectItem = () => {
         <p>furniture</p>
     </div>
     {product?.map((element)=>{
-        return <div className='selectitem-card-content ' onClick={()=>filter_product(element.id)}>
+      
+        return <div className='selectitem-card-content ' onClick={()=>filter_product(element.id,element.name)}>
         <div className='center-div'>
         <img src={sofa}/>
         <p style={{margin:'0'}}>{element.name || "hjvvh"}</p>
         </div>
-        <input type="radio" id="huey" name="drone" value="huey" ></input>
+        {/* <input type="radio" id="huey" name="drone" checked={enquiry_data?.products true:false} ></input> */}
     </div>
     })}
     
@@ -203,7 +258,7 @@ const SelectItem = () => {
     <div className="container section-padding">
         <div className="selectitem-btn center-div">
         <button type="button" className="selected-button" style={{background: '#E1E0E0'}}>Skip</button>
-        <button type="button" className="selected-button" style={{background: '#088FD8',color:'white'}}>next</button>
+        <a onClick={()=>navigate('/orderplace' ,{state:{enquiry_data}})} type="button" className="selected-button link-a" style={{background: '#088FD8',color:'white'}}>next</a>
             
         </div>
         <div className="selectitem-btn-text">
@@ -222,7 +277,7 @@ const SelectItem = () => {
             return  <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label >{element.name}</Form.Label>
         <HeadShake spy={spy}>
-        <input type="text" placeholder="enter" className="getestimate-input" style={{marginLeft:'1rem'}} name={element?.name} onChange={handlechange} />
+        <input type="text" placeholder={show_data(element.name)} className="getestimate-input" style={{marginLeft:'1rem'}} name={element?.name} onChange={handlechange} />
         </HeadShake>
       </Form.Group>
         })}

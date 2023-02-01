@@ -11,4 +11,5 @@ export {default as Contact} from './contact/Contact'
 
 export {default as Homepage} from './Homepage'
 export {default as NavigationBar} from './navbar/NavigationBar'
+export {default as FlatRent} from './footer/FlatRent'
 export {default as Footer} from './footer/Footer'

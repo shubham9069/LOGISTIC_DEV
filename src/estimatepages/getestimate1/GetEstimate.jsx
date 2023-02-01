@@ -102,9 +102,11 @@ const GetEstimate = () => {
     
   </div>
 
-  <div style={{width:'300px'}}> 
+  <div  style={{ width:'300px'}}> 
   <button   className="getestimate-btn link-a" onClick={addorder}> Next </button>
+ 
   </div>
+  <Link to="/rooms" className="lighptgrey-p link-a" style={{cursor:'pointer'}}>Previous enquiry </Link>
 </div>
 
 
