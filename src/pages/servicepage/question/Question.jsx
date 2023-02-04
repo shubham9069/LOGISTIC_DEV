@@ -11,7 +11,7 @@ function Question() {
   }
   return (
     <>
-  <div className="py-5 section-margin section-padding">
+  <div className="py-5 section-margin ">
    <div className="container">
         <div className="row center-div" style={{flexDirection:'column'}}>
            <div className="col-sm-12 col-lg-8 center-div" style={{marginBottom:'2rem'}}>

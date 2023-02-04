@@ -10,7 +10,7 @@ import HeadShake from 'react-reveal/HeadShake';
 
 const GetEstimate = () => {
   const navigate = useNavigate()
-  const {userToken} = useContext(AuthContext)
+  const {userToken,setEnquiry_id} = useContext(AuthContext)
   const [date,setDate] = useState("")
  const [bhk,setBhk] = useState("")
  const [from_location,setFrom_location] = useState("")
@@ -46,6 +46,7 @@ const GetEstimate = () => {
      const data = response.data;
      Toast(data.message,response.status)
      window.localStorage.setItem('enquiry_id', JSON.stringify(data?.enquery_id));
+     setEnquiry_id(data?.enquery_id)
      navigate('/getestimate2',{state:{id:data?.enquery_id}})
      
     }

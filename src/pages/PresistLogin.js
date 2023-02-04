@@ -5,7 +5,7 @@ import {AuthContext} from '../AuthProvider'
 
 
 const PresistLogin =()=>{
-    const {userToken,setUserToken,setUserData,userData}= useContext(AuthContext);
+    const {userToken,setUserToken,setUserData,userData,setEnquiry_id}= useContext(AuthContext);
     const [isloading,setIsLoading] = useState(true);
   
 
@@ -15,10 +15,13 @@ const PresistLogin =()=>{
             console.log("hello")
             const strtoken = window.localStorage.getItem('userToken');
             const strdata = window.localStorage.getItem('userData');
+            const enqdata = window.localStorage.getItem('enquiry_id');
             const token = JSON.parse(strtoken);
             const data = JSON.parse(strdata);
+            const enquiry__data = JSON.parse(enqdata);
             console.log(token)
             setUserToken(token)
+            setEnquiry_id(enquiry__data)
             setUserData(data)
             setIsLoading(false)
         }

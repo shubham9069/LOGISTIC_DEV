@@ -93,3 +93,10 @@ line-height: 19px;
     }
     
 }
+@media screen and (max-width:600px) {
+    .flat-rent{
+        
+        margin-top: 2rem 
+        
+    }
+}

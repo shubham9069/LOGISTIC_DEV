@@ -40,7 +40,7 @@ const Contact_Form = () => {
                    </div>
                       
                    </div>
-       <div className="icon-info section-padding" style={{margin:'3rem 0'}}>
+       <div className="icon-info section-padding" style={{margin:'2rem 0'}}>
     <div>
       <img src={move} />
       <p>1,00,000 +</p>

@@ -6,7 +6,9 @@
     position: relative;
     top: 47px;
 } */
-
+.nav-item{
+    max-width:170px !important
+}
 .dropdown-item{
     border-bottom:1px solid #E7E7E7 !important;
     grid-gap:100px !important;
@@ -21,6 +23,12 @@
 .dropdown-item>p{
     margin:0
 
+}
+@media screen and (max-width:600px) {
+    .navbar-brand{
+        width: 150px
+    }
+    
 }
 
 

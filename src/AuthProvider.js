@@ -6,6 +6,7 @@ export const AuthContext = createContext({})
 const AuthProvider = ({children}) => {
     const [userToken, setUserToken] = useState()
     const [userData, setUserData] = useState()
+    const [enquiry_id,setEnquiry_id] = useState("")
     
   //   const initialFetch = {
   //     loading: false,
@@ -33,7 +34,7 @@ const AuthProvider = ({children}) => {
 
   return (
     <>
-  <AuthContext.Provider value={{userToken,setUserToken,userData,setUserData}}>
+  <AuthContext.Provider value={{userToken,setUserToken,userData,setUserData,enquiry_id,setEnquiry_id}}>
         {children}
         </AuthContext.Provider>
 

@@ -3,7 +3,7 @@ import './selectitem.css'
 import { furniture,kitchen,sofa } from '../assest/Exportimage'
 import Toast from '../../Toast'
 import axios from '../../axios'
-import { useNavigate,Link, useParams } from 'react-router-dom'
+import { useNavigate,Link, useParams, Navigate } from 'react-router-dom'
 import { AuthContext } from '../../AuthProvider'
 import Fade from 'react-reveal/Fade';
 import Modal from 'react-bootstrap/Modal';
@@ -13,12 +13,12 @@ import HeadShake from 'react-reveal/HeadShake';
 
 const SelectItem = () => {
     const navigate = useNavigate()
-    const {userToken} = useContext(AuthContext)
+    const {userToken,enquiry_id} = useContext(AuthContext)
     const [product,setproduct] =useState([])
     const [productAtt,setproductAtt] =useState([])
     const [enquiry_data,setEnquiry_Data] =useState([])
     const [isLoading,setIsLoading] = useState(true)
-    const [enquiry_id,setEnquiry_id] = useState("")
+ 
     const [show, setShow] = useState(false);
     const [data, setdata] = useState();
     const [spy,setSpy] = useState(false)
@@ -51,7 +51,8 @@ const SelectItem = () => {
     const show_data=(input_name)=>{
       
       
-      
+      console.log(enquiry_data?.products[productAtt?.name])
+      // console.log()
       
       var array = enquiry_data?.products[productAtt?.name]?.filter((element,index)=>{
        
@@ -60,7 +61,7 @@ const SelectItem = () => {
           return element.attribute_value
         }
       })
-      
+      console.log(array)
       const [first] =array
       console.log(first)
       return (first?.attribute_value)
@@ -100,17 +101,14 @@ const SelectItem = () => {
 
     useEffect(() => {
         try{
-            const strid = window.localStorage.getItem('enquiry_id');
-            const enquiryid= JSON.parse(strid);
-            setEnquiry_id(enquiryid);
-           
-            enqdata(enquiryid);
+            getroom_attr()
+            enqdata(enquiry_id);
         }
         catch(err){
 
         }
         finally{
-          getroom_attr()
+          
           
             setIsLoading(false)
         }
@@ -192,6 +190,7 @@ const SelectItem = () => {
            }
     }
   return (
+    enquiry_id ?
     <>
     <div className="selectitem section-padding">
     <div className="container">
@@ -257,8 +256,8 @@ const SelectItem = () => {
     </div>
     <div className="container section-padding">
         <div className="selectitem-btn center-div">
-        <button type="button" className="selected-button" style={{background: '#E1E0E0'}}>Skip</button>
-        <a onClick={()=>navigate('/orderplace' ,{state:{enquiry_data}})} type="button" className="selected-button link-a" style={{background: '#088FD8',color:'white'}}>next</a>
+        <button onClick={()=>navigate('/rooms')} type="button" className="selected-button link-a" style={{background: '#E1E0E0'}}>NextRoom</button>
+        
             
         </div>
         <div className="selectitem-btn-text">
@@ -293,6 +292,8 @@ const SelectItem = () => {
         </Modal.Footer>
       </Modal>
     </>
+    :
+    <Navigate to="/getestimate1"  />
   )
 }
 

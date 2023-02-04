@@ -76,3 +76,15 @@ color:white !important;
 
     }
 }
+@media screen and (max-width:600px) {
+    .icon-info{
+    
+        grid-gap:20px;
+        
+        
+    }
+    .icon-info>div>p{
+        font-size: 0.6rem;
+          
+      }
+}

@@ -84,3 +84,36 @@ line-height: 28px
   font-size:12px
 
 }
+
+@media screen and (max-width:800px) {
+    .myorder-box1{
+        
+        padding: 1rem 0.5rem ;
+      
+       
+       }
+    .myorder-box1>p{
+    font-size: 0.9rem;
+       
+       }
+       .myorder-box2{
+   
+        padding: 1rem; 
+    
+    }
+
+.myorder-box-top>div>h6,.myorder-box-middle>div>h6,.myorder-box-lower>div>h6{
+  
+    
+    font-size: 1rem;
+
+}
+.myorder-box-top>div>p,.myorder-box-middle>div>p,.myorder-box-lower>div>p{
+  font-size:0.8rem
+
+}
+.myorder-box-lower>div>p{
+    display: none;
+}
+    
+}

@@ -100,16 +100,8 @@
    grid-gap:20px
    
 }
-.selectitem-btn {
-    /* border: 1px solid red; */
-    grid-gap:20px
-}
-.selected-button{
-    padding: 0.5rem 2.5rem;
-    border-radius: 11px;
-    border: none;
-    margin-bottom: 1.5rem;
-}
+
+
 
 .modal-attr{
     flex-direction: column;

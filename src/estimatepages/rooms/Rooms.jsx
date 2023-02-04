@@ -2,14 +2,17 @@ import React, { useEffect,useContext,useState } from 'react'
 import './rooms.css'
 import Toast from '../../Toast'
 import axios from '../../axios'
-import { useNavigate,Link } from 'react-router-dom'
+import { useNavigate,Link,useLocation } from 'react-router-dom'
 import { AuthContext } from '../../AuthProvider'
 import Fade from 'react-reveal/Fade';
 
 const Rooms = () => {
-    const {userToken} = useContext(AuthContext)
+  const navigate = useNavigate()
+    const {userToken,enquiry_id} = useContext(AuthContext)
 const [isLoading,setIsLoading] =useState(true)
-const [roomsdata,setRoomData] = useState([])
+const [roomsdata,setRoomData] = useState([]);
+const [enquiry_data,setEnquiry_Data] =useState([])
+
 
 
 const rooms_getdata =async () =>
@@ -45,10 +48,42 @@ const rooms_getdata =async () =>
      
 
 }
+   
+const enqdata =async()=>{
+  
+  try{
+      
+      const response= await axios({
+        method: "get",
+       url:`all_details?enquiry_id=${enquiry_id}`,
+        headers:{
+         'Authorization': `Bearer ${userToken}`
+        }
+        } )
+       
+       if(response.status===200){
+        const data = response.data;
+        setEnquiry_Data(data.enquery)
+        Toast(data.message,response.status)
+        
+        
+       }
+     }
+     catch(err){
+      const error = err.response.data
+      Toast(error.message);
+      
+   
+   
+     }
+   
+
+}
 
 
 useEffect(()=>{
     rooms_getdata();
+    enqdata()
 },[])
   return (
     <>
@@ -70,6 +105,9 @@ useEffect(()=>{
     </Link>
     })}
    
+    </div>
+    <div>
+    <a onClick={()=>navigate('/orderplace',{state:{enquiry_data}})} type="button" className="selected-button link-a center-div" style={{background: '#088FD8',color:'white'}}>place your order</a>
     </div>
      </div>
     </div>

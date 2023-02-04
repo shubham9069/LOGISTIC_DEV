@@ -58,3 +58,20 @@ z-index: 1111;
     padding:0.5rem 1rem  ;
    width: 300px;
 }
+
+
+@media screen and (max-width:800px) {
+    .bottom-box>div{
+        
+        flex:1 1 150px;
+     height: 150px;
+     padding: 1rem;
+    
+    }
+
+    .bottom-box>div>p{
+        
+       font-size: 0.8rem;
+    
+    }
+}

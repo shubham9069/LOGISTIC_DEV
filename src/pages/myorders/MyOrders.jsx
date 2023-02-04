@@ -5,6 +5,8 @@ import axios from '../../axios';
 import Toast from '../../Toast';
 import AuthProvider, { AuthContext } from '../../AuthProvider';
 import { waitForElementToBeRemoved } from '@testing-library/react';
+import {sofa} from '../../estimatepages/assest/Exportimage'
+import { Fade } from 'react-reveal'
 
 const MyOrders = () => {
   const {userToken}= useContext(AuthContext)
@@ -28,7 +30,7 @@ const MyOrders = () => {
              if(response.status===200){
               const data = response.data;
               setAllorders(data?.enqueries)
-              Toast(data.message,response.status)
+              // Toast(data.message,response.status)
               
               
              }
@@ -62,7 +64,7 @@ const MyOrders = () => {
       return     <div className=" myorder container ">
      <div className="myorder-box1">
     <p>{ new Date(element.created_at).toLocaleString()}</p>
-    <p>{element.id} enquiry_id</p>
+    <p>enquiry_id:{element.id} </p>
      </div>
      <div className="myorder-box2 d-flex" style={{flexDirection:'column',gridGap:'20px'}}>
     <div className="myorder-box-top">
@@ -106,11 +108,11 @@ const MyOrders = () => {
 
     {Modaldata ? 
 
-      <Modal show={show} onHide={()=>setshow(false)} >
+      <Modal show={show} onHide={()=>setshow(false)} scrollable={true} >
 <Modal.Header closeButton >
   <Modal.Title>details </Modal.Title>
 </Modal.Header>
-<Modal.Body>
+<Modal.Body scrollable={true}>
 <div className=" d-flex" style={{flexDirection:'column',gridGap:'10px'}}>
 <div className="myorder-modal-top">
 <div style={{flex:0.75}}>
@@ -147,27 +149,45 @@ const MyOrders = () => {
 <div className="myorder-modal-middle">
 <div style={{overflow:'hidden'}}>
 <h6>items</h6>
-     {Object.keys(Modaldata?.products || {}).map((element)=>{
+<Fade bottom>
+    <div className='itemlist-container'>
+    
+    {Object.keys(Modaldata?.products || {})?.map((element)=>{
+        
+        if(Modaldata?.products[element]?.length)
+        {
+        return  <div className='item-list-box '>
+       <div>
+        <img src={sofa}></img>
+       </div>
+       <div>
+        <p style={{margin:'3px'}}>{element}</p>
+        <div style={{display: 'flex',gridGap:'10px'}}>
+        {Modaldata?.products[element]?.map((att)=>{
 
-      return <div>
-        <h6>{element}</h6>
-        {Modaldata.products[element].map((att)=>{
 
-
-          return <p>{att.attribute_name}:  {att.attribute_value}</p>
+            return <p style={{fontSize:'12px'}}>{att?.attribute_name}  :  {att?.attribute_value}</p>
         })}
-      </div>
-
-
-
-     })}
+        </div>
+        
+        </div>
+    </div>
+    }})}
+    
+   
+  
+   
+    
+        </div>
+        </Fade>
+    
 </div>
 </div>
 
 </div>
 </Modal.Body>
 <Modal.Footer>
-  <button className="viewdetails" onClick={()=>setshow(true)}>
+  <button className="viewdetails" onClick={()=>setshow(false)}>
     Close
   </button>
   <button className="edit-inv-btn" onClick={()=>{window.print();}}>

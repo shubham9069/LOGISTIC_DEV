@@ -17,3 +17,15 @@
    
 }
 
+@media screen and (max-width:600px) {
+    .question>div>p{
+        font-size: 0.8rem;
+        
+       
+    }
+    .ANIMATION{
+        font-size:0.8rem
+    }
+    
+}
+

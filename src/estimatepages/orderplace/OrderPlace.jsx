@@ -73,10 +73,13 @@ Simply check the package option and let us know, or let us recommed the most pop
         <div>
             <p style={{fontWeight:600,fontSize:'16px'}}>Your Selected Items</p>
         </div>
+        <Fade bottom>
     <div className='itemlist-container'>
+    
     {Object.keys(order_data?.products || {}).map((element)=>{
-
-
+        
+        if(order_data?.products[element]?.length)
+        {
         return  <div className='item-list-box '>
        <div>
         <img src={sofa}></img>
@@ -93,13 +96,14 @@ Simply check the package option and let us know, or let us recommed the most pop
         
         </div>
     </div>
-    })}
-    <Fade bottom>
+    }})}
+    
    
   
    
-    </Fade>
+    
         </div>
+        </Fade>
     </div>
 
 

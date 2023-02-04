@@ -11,12 +11,13 @@
 }
 .number-div{
     display: flex;
-    padding: 1rem 2rem;
+    /* padding: 1rem 2rem; */
     grid-gap:20px;
     align-items: center;
 }
 .number-div>p{
-   margin:0
+   margin:0;
+   font-weight:600
 }
 .numbering{
     border-radius: 100%;
@@ -26,6 +27,7 @@
     align-items: center;
     width: 50px;
     height: 50px;
+    min-width: 50px;
     color:#088FD8;
 }
 
@@ -35,4 +37,11 @@
 
 
     }
+}
+@media screen and (max-width:600px) {
+    .number-div>p{
+        font-size: 0.8rem;
+        font-weight: 600;
+     }
+    
 }

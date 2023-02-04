@@ -28,7 +28,7 @@ a:hover{
 }
  
 .section-margin{
-  margin: 4rem 4rem !important ;
+  margin: 2rem 4rem !important ;
 }
 .section-padding{
   padding: 2rem 4rem !important ;
@@ -81,6 +81,7 @@ input::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance: textfield;
   }
+ 
 
 
 .text-area{
@@ -96,6 +97,7 @@ input[type=number] {
   width:100%;
 
 }
+
 
 .form-btn{
   background: #315CB3 !important;
@@ -118,7 +120,7 @@ input[type=number] {
 
 }
 
-@media screen and (max-width:1000px) {
+@media screen and (max-width:1200px) {
   .section-margin{
     margin: 2rem 2rem !important ;
   }
@@ -131,8 +133,16 @@ input[type=number] {
 }
 
 @media screen and (max-width:600px) {
+  select,
+  textarea,
+  input {
+    font-size: 16px !important;
+  }
   .section-margin{
     margin: 1rem 1rem !important ;
+  }
+  .section-padding{
+    padding: 1rem 1rem !important ;
   }
  
   .section-marginX{
@@ -159,6 +169,13 @@ input[type=number] {
   line-height: 20px;
   font-size: 14px;
   color: #B5ABAB;
+}
+.form-btn{
+  
+  padding: 0.8rem !important;
+  max-width: 200px;
+  margin: 2rem auto;
+  font-size: 0.8rem !important;
 }
 }
 
