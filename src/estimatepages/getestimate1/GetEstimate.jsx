@@ -78,9 +78,9 @@ const GetEstimate = () => {
     <HeadShake spy={spy}>
     <select className="getestimate-input" value={bhk} onChange={e=>setBhk(e.target.value)}>
     <option selected value="" >BHK</option>
-    <option >1BHK</option>
-    <option >2BHK</option>
-    <option >3BHK</option>
+    <option value='1'>1BHK</option>
+    <option value='2'>2BHK</option>
+    <option value='3'>3BHK</option>
     </select>
     </HeadShake>
     <p>From</p>

@@ -21,7 +21,7 @@ const rooms_getdata =async () =>
         setIsLoading(true)
         const response= await axios({
           method: "get",
-         url:'/rooms',
+         url:`/rooms?enquiry_id=${enquiry_id}`,
           headers:{
            'Authorization': `Bearer ${userToken}`
           }
@@ -29,7 +29,7 @@ const rooms_getdata =async () =>
          
          if(response.status===200){
           const data = response.data;
-          setRoomData(data?.rooms)
+          setRoomData(data)
           Toast(data.message,response.status)
           
           
@@ -97,7 +97,14 @@ useEffect(()=>{
     </Fade>
 
     <div className="rooms-box center-div">
-    {roomsdata?.map((element, index) =>{
+    {roomsdata?.rooms?.map((element, index) =>{
+      
+        return  <Link to={'/selectitem/'+element.id} className="rooms-card1 center-div">
+    <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZGluaW5nJTIwcm9vbXxlbnwwfHwwfHw%3D&w=1000&q=80" ></img>
+    <p>{element?.name}</p>
+    </Link>
+    })}
+    {roomsdata?.bedrooms?.map((element, index) =>{
       
         return  <Link to={'/selectitem/'+element.id} className="rooms-card1 center-div">
     <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZGluaW5nJTIwcm9vbXxlbnwwfHwwfHw%3D&w=1000&q=80" ></img>

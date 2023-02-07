@@ -98,6 +98,27 @@ const checkotp=async(e)=>{
 
 
     }
+
+
+    function otphandler(e){
+      
+
+
+      var element = document.getElementsByClassName('form-control')
+      // console.log(element)
+      
+
+      // keycode 8 for backspace 
+      if(e.keyCode == 8 && e.target.value.length ==0 &&  e.target.previousElementSibling !==null){
+      e.target.previousElementSibling.focus()
+     
+
+      }if( e.target.value.length >=e.target.maxLength && e.target.nextElementSibling !==null){
+        e.target.nextElementSibling.focus()
+      }
+      
+
+    }
   return (
     <>
         <div className="forgetpassword ">
@@ -108,13 +129,13 @@ const checkotp=async(e)=>{
       <form>
       <div className="mb-3 d-flex  justify-content-center"style={{gridGap:'20px'}}>
     
-    <input type="text" className="form-control form-input" id="exampleInputname" aria-describedby="name" maxLength={1} style={{maxWidth:'70px'}} value={input1} onChange={(e)=>{setInput1(e.target.value)}}/>
+    <input type="text" className="form-control form-input" id="otp1" onKeyUp={otphandler} aria-describedby="name" maxLength={1} style={{maxWidth:'70px'}} value={input1} onChange={(e)=>{setInput1(e.target.value)}} onClick/>
     
-    <input type="text" className="form-control form-input" id="exampleInputname" aria-describedby="name" maxLength={1} style={{maxWidth:'70px'}} value={input2} onChange={(e)=>{setInput2(e.target.value)}}/>
+    <input type="text" className="form-control form-input" id="otp2" onKeyUp={otphandler} aria-describedby="name" maxLength={1} style={{maxWidth:'70px'}} value={input2} onChange={(e)=>{setInput2(e.target.value)}}/>
     
-    <input type="text" className="form-control form-input" id="exampleInputname" aria-describedby="name" maxLength={1} style={{maxWidth:'70px'}}  value={input3} onChange={(e)=>{setInput3(e.target.value)}}/>
+    <input type="text" className="form-control form-input" id="otp3" onKeyUp={otphandler} aria-describedby="name" maxLength={1} style={{maxWidth:'70px'}}  value={input3} onChange={(e)=>{setInput3(e.target.value)}}/>
     
-    <input type="text" className="form-control form-input" id="exampleInputname" aria-describedby="name" maxLength={1} style={{maxWidth:'70px'}}  value={input4} onChange={(e)=>{setInput4(e.target.value)}}/>
+    <input type="text" className="form-control form-input" id="otp4" onKeyUp={otphandler} aria-describedby="name" maxLength={1} style={{maxWidth:'70px'}}  value={input4} onChange={(e)=>{setInput4(e.target.value)}}/>
  
   </div>
   
