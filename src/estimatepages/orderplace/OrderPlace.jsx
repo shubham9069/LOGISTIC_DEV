@@ -1,17 +1,62 @@
-import React,{useContext} from 'react'
+import React,{useContext,useEffect,useState} from 'react'
 import './orderplace.css'
 import {orderplace,sofa} from '../assest/Exportimage'
 import {AuthContext} from '../../AuthProvider'
 import { Fade } from 'react-reveal'
 import { Link, useLocation } from 'react-router-dom'
+import axios from '../../axios'
+import Toast from '../../Toast'
 
 
 const OrderPlace = () => {
+    
 
-    const {userData,userToken} = useContext(AuthContext)
+    const {userData,userToken,enquiry_id} = useContext(AuthContext)
     const location = useLocation()
     const order_data = location?.state?.enquiry_data;
     console.log(order_data)
+
+
+        
+    const success=async()=>{
+        
+       var user_id = userData.id
+         
+        try{
+            
+            const response= await axios({
+              method: "post",
+             url:`/success`,
+             data:{user_id,enquiry_id},
+              headers:{
+               'Authorization': `Bearer ${userToken}`
+              }
+              } )
+             
+             if(response.status===200){
+              const data = response.data;
+              
+              Toast(data.message,response.status)
+              
+              
+             }
+           }
+           catch(err){
+            const error = err.response.data
+            Toast(error.message);
+            
+         
+         
+           }
+          
+    }
+
+useEffect(() => {
+success()
+})
+
+
+
   return (
     <>
     <div className="order-top container center-div " >
