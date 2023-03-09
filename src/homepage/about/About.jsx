@@ -5,7 +5,7 @@ import {Service,schedule} from '../assest/index'
 const About = () => {
   return (
     <>
-        <div className="about-section mt-5 section section-margin " style={{padding:'2rem'}}>
+        <div className="about-section mt-5 section section-margin " style={{padding:'1rem'}}>
     <div className="container">
         <div className="row about">
             <div className="col-sm-12 col-lg-6 about-left">
@@ -14,7 +14,7 @@ const About = () => {
                  Your Busniess Success Built On A Powerful Customer Experience Platform
                  </h2>
 
-                 <p align="justify" className="about-text py-3">Budget Logistic and Packers is a professional and reputed relocation service provider based in Bangalore. Our main objective is to make the process of goods shifting relatively easy for you. We make sure that you have an unforgettable experience by minimizing all the worries related to goods shifting. <span style={{color:'#FF1E1E'}}>Read More.</span> </p>
+                 <p align="justify" className="about-text py-3">Budget Logistic and Packers is a professional and reputed relocation service provider based in Bangalore. Our main objective is to make the process of goods shifting relatively easy for you. We make sure that you have an unforgettable experience by minimizing all the worries related to goods shifting.</p>
             </div>
             <div className="col-sm-12 col-lg-6 about-right">
                  <div className="row ">

@@ -28,13 +28,16 @@ a:hover{
 }
  
 .section-margin{
-  margin: 2rem 4rem !important ;
+  margin: 2rem 2rem !important ;
 }
 .section-padding{
-  padding: 2rem 4rem !important ;
+  padding: 2rem 2rem !important ;
 }
 .section-marginX{
-margin: 0 4rem !important
+margin: 0 2rem !important
+}
+.section-paddingX{
+padding: 0 2rem 
 }
 .btn-design{
   padding: 0.6rem 1.5rem !important ;
@@ -49,6 +52,11 @@ background: #088FD8;
   display: flex;
   align-items: center;
   justify-content:center;
+}
+.between-div{
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
 }
 .form-input{
   border:none !important;
@@ -65,7 +73,7 @@ border-radius: 0 !important;
 }
 .lighptgrey-p{
   font-weight: 500;
-  line-height: 24px;
+  line-height: 20px;
   color: #817979;;
 }
 
@@ -111,15 +119,25 @@ input[type=number] {
 }
 .section-subheading{
   text-transform: uppercase !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
+ 
+  font-size: 20px !important;
+  line-height: 28px;
+  letter-spacing: 0.115em;
+  margin: 0 2rem 1rem 2rem;
+  color: #217FED;
 
 }
 .section-heading{
   text-transform: capitalize !important;
   font-weight: 600 !important;
+  border-left: 5px solid #217FED;
+  padding: 0 15px;
+  font-size: 24px !important;
+  line-height: 36px;
+  color: #3e3a3a
 
 }
-
 @media screen and (max-width:1200px) {
   .section-margin{
     margin: 2rem 2rem !important ;
@@ -139,21 +157,21 @@ input[type=number] {
     font-size: 16px !important;
   }
   .section-margin{
-    margin: 1rem 1rem !important ;
+    margin: .5rem .5rem !important ;
   }
   .section-padding{
-    padding: 1rem 1rem !important ;
+    padding: 0.5rem 0.5rem !important ;
   }
  
   .section-marginX{
-  margin: 0 1rem !important
+  margin: 0 .5rem !important
   }
   .container{
     width: 100% !important;
     
   }
   .section-subheading{
-    font-size: 20px !important;
+    font-size: 16px !important;
     margin: 0 1rem 1rem 1rem !important;
   
   }
@@ -161,8 +179,8 @@ input[type=number] {
 .section-heading {
  
   
-  font-size: 26px !important;
-  
+  font-size: 20px !important;
+  line-height: 24px;
 }
 .lighptgrey-p{
   font-weight: 500;

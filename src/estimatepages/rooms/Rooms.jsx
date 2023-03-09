@@ -37,7 +37,7 @@ const rooms_getdata =async () =>
        }
        catch(err){
         const error = err.response.data
-        Toast(error.message);
+        // Toast(error.message);
         
      
      
@@ -71,7 +71,7 @@ const enqdata =async()=>{
      }
      catch(err){
       const error = err.response.data
-      Toast(error.message);
+      // Toast(error.message);
       
    
    
@@ -82,6 +82,10 @@ const enqdata =async()=>{
 
 
 useEffect(()=>{
+  if(!enquiry_id){
+    Toast("no enquery found ")
+    navigate("/getestimate1")
+  } 
     rooms_getdata();
     enqdata()
 },[])
@@ -113,8 +117,8 @@ useEffect(()=>{
     })}
    
     </div>
-    <div>
-    <a onClick={()=>navigate('/orderplace',{state:{enquiry_data}})} type="button" className="selected-button link-a center-div" style={{background: '#088FD8',color:'white'}}>place your order</a>
+    <div className="center-div">
+    <a onClick={()=>navigate('/orderplace',{state:{enquiry_data}})} type="button" className="selected-button link-a " style={{background: '#088FD8',color:'white'}}>place your order</a>
     </div>
      </div>
     </div>

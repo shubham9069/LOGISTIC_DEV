@@ -1,30 +1,15 @@
 .about{
     justify-content: space-between;
 }.about-left{
-    max-width: 450px !important;
+    /* max-width: 450px !important; */
 }
 .about-right{
-    max-width: 450px !important;
+    /* max-width: 450px !important; */
 }
 
 
 
-.section-subheading{
-    font-weight: 500;
-font-size: 24px;
-line-height: 28px;
-letter-spacing: 0.115em;
-margin: 0 2rem 2rem 2rem;
-color: #217FED;
-}
-.section-heading {
-    border-left: 5px solid #217FED;
-    padding: 0 15px;
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 131.19%;
-    color: #000000;
-}
+
 .about-text {
    
     
@@ -47,5 +32,11 @@ border-radius: 14.8633px;
    .about-right{
     margin: 0 auto !important;
    }
+   .about-img>p{
+   font-size: 12px;
+}
+   .about-img>img{
+  width: 40px;
+}
     
 }

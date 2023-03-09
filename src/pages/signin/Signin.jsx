@@ -34,7 +34,7 @@ const Signin = () => {
        
        if(response.status===200){
         const data = response.data;
-        Toast(data?.otp,response.status)
+        Toast(data?.message,response.status)
         navigate('/otp' , {state:{mobile,from}})
         
        }

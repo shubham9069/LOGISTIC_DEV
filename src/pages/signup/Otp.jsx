@@ -36,7 +36,7 @@ const checkotp=async(e)=>{
            
            if(response.status===200){
             const data = response.data;
-            Toast(data.message,response.status);
+            Toast(data.msg,response.status);
             
             if(data?.Customer?.is_active==0){
               navigate('/signup' ,{state:{mobile}})
@@ -73,7 +73,7 @@ const checkotp=async(e)=>{
            
            if(response.status===200){
             const data = response.data
-            Toast(data.message,response.status)
+            Toast(data.msg,response.status)
            }
          }
          catch(err){

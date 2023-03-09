@@ -31,7 +31,8 @@ const SelectItem = () => {
    
 
     const handlechange=(e)=>{
-        e.preventDefault()
+      // console.log(e.target.value)
+        // e.preventDefault()
         const name = e.target.name
         const value = e.target.value
 
@@ -48,23 +49,19 @@ const SelectItem = () => {
       
         
     }
-    const show_data=(input_name)=>{
+    const show_data=(input_name,attribute_name)=>{
+      
+     
+      // console.log(enquiry_data?.products[productAtt?.name])
       
       
-      console.log(enquiry_data?.products[productAtt?.name])
-      // console.log()
-      
-      var array = enquiry_data?.products[productAtt?.name]?.filter((element,index)=>{
+      var array = enquiry_data?.products[productAtt?.name]?.some((element,index)=>{
        
-        if(element.attribute_name==input_name)
-        {
-          return element.attribute_value
-        }
+        return element.attribute_value==input_name && element?.attribute_name== attribute_name
       })
-      console.log(array)
-      const [first] =array
-      console.log(first)
-      return (first?.attribute_value)
+      return array
+      
+      // return (first?.attribute_value)
     } 
    
 
@@ -211,7 +208,7 @@ const SelectItem = () => {
       
         return <div className='selectitem-card-content ' onClick={()=>filter_product(element.id,element.name)}>
         <div className='center-div'>
-        <img src={sofa}/>
+        <img src={element?.icon}/>
         <p style={{margin:'0'}}>{element.name || "hjvvh"}</p>
         </div>
         {/* <input type="radio" id="huey" name="drone" checked={enquiry_data?.products true:false} ></input> */}
@@ -267,17 +264,28 @@ const SelectItem = () => {
         
     </div>
 
-    <Modal show={show} onHide={()=>{setdata();setShow(false)}}>
+    <Modal show={show} onHide={()=>{setdata();setShow(false)}} size='lg'>
         <Modal.Header closeButton>
           <Modal.Title>selcted your item </Modal.Title>
         </Modal.Header>
-        <Modal.Body className="modal-attr center-div">
+        <Modal.Body className="modal-attr center-div" >
         {productAtt?.attributes?.map((element)=>{
-            return  <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label >{element.name}</Form.Label>
-        <HeadShake spy={spy}>
-        <input type="text" placeholder={show_data(element.name)} className="getestimate-input" style={{marginLeft:'1rem'}} name={element?.name} onChange={handlechange} />
+          var data = JSON.parse(element?.value)
+            return  <Form.Group className="mb-3 d-flex " controlId="formBasicPassword" style={{gridGap:'20px',}}>
+        <Form.Label style={{}} >{element.name+" : "}</Form.Label>
+        <div style={{display:'flex',flexWrap:'wrap'}}>
+        
+        {data?.rows?.map((item)=>{
+          
+          return  <div>
+          <HeadShake spy={spy}>
+        <input type="radio" value={item?.value} defaultChecked={show_data(item?.value,element?.name)}  style={{marginLeft:'1rem',width:'17px',height:'17px'}} name={element?.name} onChange={handlechange} />
+        <label style={{padding:'0 10px'}}>{item?.value}</label>
         </HeadShake>
+        </div>
+        })}
+        </div>
+       
       </Form.Group>
         })}
       

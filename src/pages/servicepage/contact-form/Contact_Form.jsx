@@ -3,16 +3,16 @@ import './contact_form.css'
 import Form from 'react-bootstrap/Form';
 import { packermover,warehouse,smiley,people,move } from '../assest/exportfiles';
 
-const Contact_Form = () => {
+const Contact_Form = ({Title,img}) => {
   return (
     <>
-     <div className="row py-5  contact-1200px center-div section-padding section-marginX">
-               <div className="col-sm-12 col-lg-8 center-div" Style={'flex:1;flex-direction:column'}>
+     <div className="row py-5  contact-1200px d-flex justify-content-center section-padding section-marginX">
+               <div className="col-sm-12 col-lg-8 h-100 d-flex align-items-center" Style={'flex:1;flex-direction:column'}>
                <div  className="contact-text" style={{minHeight:'100px'}}>
-               <h1>Packer and Mover</h1>
+               <h1>{Title}</h1>
                <p>Find out how much your moving will costt your</p>
                </div>
-               <img src={packermover} style={{maxWidth:'450px',width:'100%'}}></img>
+               <img src={img} style={{width:'100%'}}></img>
            
                </div>
   <div className="col-sm-12 col-lg-4  " Style={'flex:1;width:auto'}>

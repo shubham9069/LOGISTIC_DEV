@@ -81,6 +81,8 @@ const GetEstimate = () => {
     <option value='1'>1BHK</option>
     <option value='2'>2BHK</option>
     <option value='3'>3BHK</option>
+    <option value='4'>Villa</option>
+    <option value='5'>Duplex</option>
     </select>
     </HeadShake>
     <p>From</p>
@@ -98,7 +100,7 @@ const GetEstimate = () => {
     <HeadShake spy={spy}>
     <input type="datetime-local" id="meeting-time" className='getestimate-input'
        name="meeting-time" value={date} onChange={(e)=>setDate(e.target.value)}
-       min="" max=""></input>
+       min="" max=""/>
     </HeadShake>
     
   </div>

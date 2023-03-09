@@ -7,9 +7,9 @@
     
 }
 
-.banner:before{
+.banner-dark{
     content:"";
-    background: url("../assest//Rectangle\ 3875.png") no-repeat center;
+  background-image: url("../assest//Rectangle\ 3875.png");
     background-size:cover;
     position:absolute;
     left: 0;top:0;right: 0;
@@ -41,41 +41,67 @@
     color: white;
      margin-bottom: 1.5rem;
      font-weight: 500;
-font-size: 24px;
+font-size: 18px;
 line-height: 149.02%;
 }
 .banner-content>p>span{
     color: #FDE958;
    
      font-weight: 500;
-font-size: 24px;
+font-size: 22px;
 line-height: 149.02%;
 }
 .banner-content>h1{
     color: white;
     font-weight: 500;
-font-size: 48px;
-line-height: 72px
+font-size: 40px;
+line-height: 60px
 }
 
+@media screen and (max-width: 800px) {
+    .banner-content>p{
+    
+    margin-bottom: 0.5rem;
+   
+font-size: 14px;
+line-height: 30px
+}
+.banner-content>p>span{
+
+    font-size: 16px;
+line-height: 25px
+}
+.banner-content>h1{
+   
+   
+font-size: 22px;
+line-height: 28px
+}
+.banner-content{
+    
+   margin-left: 1rem;
+
+   
+}
+}
 @media screen and (max-width: 600px) {
     .banner-content>p{
     
     margin-bottom: 0.5rem;
    
-font-size: 18px;
-line-height: 52px
+font-size: 12px;
+line-height: 30px
 }
 .banner-content>p>span{
 
-    font-size: 16px;
-line-height: 52px
+    font-size: 14px;
+line-height: 25px
 }
 .banner-content>h1{
    
    
-font-size: 42px;
-line-height: 52px
+font-size: 20px;
+line-height: 28px
 }
 .banner-content{
     

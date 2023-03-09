@@ -3,11 +3,24 @@ import './review.css'
 import {star} from '../assest/exportfiles'
 
 
-const Review = () => {
+const Review = ({reviewArr}) => {
+
+    
+const getstar =(rating) => {
+    var total = 5
+    var star =[]
+    for(var i=0; i<rating;i++){
+        star.push(<i class="bi bi-star-fill"></i>)
+    }
+    for(var i=0; i<total-rating;i++){
+        star.push(<i class="bi bi-star"></i>)
+    }
+    return star
+}
   return (
     <>
         <div className="py-5 section-margin section-padding">
-   <div className="container">
+   <div className="">
         <div className="row center-div" style={{flexDirection:'column'}}>
            <div className="col-sm-12 col-lg-8 center-div" style={{marginBottom:'2rem'}}>
                 {/* <p className="section-subheading">WE ARE GROWING</p> */}
@@ -15,48 +28,24 @@ const Review = () => {
            </div>
           
            <div className="col-sm-12 col-lg-8 d-flex justify-content-center" style={{width: '100%',gridGap:'30px',flexWrap:'wrap'}} >
-               <div className="review-box ">    
-                <p>Rohit sharma </p>
+
+           {reviewArr?.map((element, i) =>{
+
+                return <div className="review-box ">    
+                <p>{element?.name} </p>
                 <div>
-                <h6>Awesone Product</h6>
-                <p>Lorem ipsum dolor sit amet consectetur. Elementum quis urna porta blandit hendrerit. Scelerisque id dignissim pharetra risus posuere neque ullamcorper mauris. Leo pretium leo.quis urna porta blandit hendrerit. Scelerisque id dignissim pharetra</p>
+                <h6>{element?.designation}</h6>
+                <p>{element?.quot}</p>
                 <div className='review-star'>
-                    <img src={star} />
-                    <img src={star} />
-                    <img src={star} />
-                    <img src={star} />
-                    <img src={star} />
+                    {getstar(element?.rating)}
                 </div>
                 </div>
                </div>
-               <div className="review-box ">    
-                <p>Rohit sharma </p>
-                <div>
-                <h6>Awesone Product</h6>
-                <p>Lorem ipsum dolor sit amet consectetur. Elementum quis urna porta blandit hendrerit. Scelerisque id dignissim pharetra risus posuere neque ullamcorper mauris. Leo pretium leo.quis urna porta blandit hendrerit. Scelerisque id dignissim pharetra</p>
-                <div className='review-star'>
-                    <img src={star} />
-                    <img src={star} />
-                    <img src={star} />
-                    <img src={star} />
-                    <img src={star} />
-                </div>
-                </div>
-               </div>
-               <div className="review-box ">    
-                <p>Rohit sharma </p>
-                <div>
-                <h6>Awesone Product</h6>
-                <p>Lorem ipsum dolor sit amet consectetur. Elementum quis urna porta blandit hendrerit. Scelerisque id dignissim pharetra risus posuere neque ullamcorper mauris. Leo pretium leo.quis urna porta blandit hendrerit. Scelerisque id dignissim pharetra</p>
-                <div className='review-star'>
-                    <img src={star} />
-                    <img src={star} />
-                    <img src={star} />
-                    <img src={star} />
-                    <img src={star} />
-                </div>
-                </div>
-               </div>
+
+           })}
+               
+              
+              
 
            </div>
         </div>
@@ -69,7 +58,7 @@ const Review = () => {
 <div className="py-5 section-margin section-padding">
    <div className="container">
         <div className="row center-div" style={{flexDirection:'column'}}>
-           <div className="col-sm-12 col-lg-8 center-div" style={{marginBottom:'2rem'}}>
+           <div className="col-sm-12 col-lg-8 center-div" style={{}}>
                 {/* <p className="section-subheading">WE ARE GROWING</p> */}
                 <h2 className="section-heading">We are trusted by many </h2>
            </div>

@@ -11,7 +11,7 @@ font-size: 18px;
 line-height: 21px;
 }
 .review-box>div{
-    padding: 2rem;;
+    padding: 1.5rem;;
     display:flex;
     flex-direction:column;
     grid-gap:10px;
@@ -28,6 +28,8 @@ line-height: 21px;
 .review-box>div>p{
     color: #8D8D8D;
     font-weight: 400;
+    font-size: 13px;
+    max-width: 300px;
 }
 
 

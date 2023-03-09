@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './growing.css'
 
 
 const Growing = () => {
+   
+
+
   return (
     <>
         <div className="py-5 section-margin section-padding">
@@ -17,13 +20,13 @@ const Growing = () => {
         <div className="row py-5 justify-content-center" style={{gridGap:'25px'}}>
            <div className="col-lg-4 col-sm-12 center-div growing-box" >
                <div className="growing-tiles">
-                   <h5 className="growing-tile-heading">1300k+</h5>
+                   <h5 className="growing-tile-heading">1300</h5>
                    <span>User Order Online</span>
                </div>
            </div>
            <div className="col-lg-4 col-sm-12 center-div growing-box" style={{background: 'rgba(190, 226, 245, 0.47)'}} >
                <div className="growing-tiles" >
-                   <h5 className="growing-tile-heading">1500k+</h5>
+                   <h5 className="growing-tile-heading">1500</h5>
                    <span>Client &amp; Event More On The Way</span>
                </div>
            </div>

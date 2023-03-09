@@ -13,7 +13,7 @@ const MyOrders = () => {
   const [isLoading,setIsLoading] = useState(true)
     const [show,setshow] = useState(false)
     const [Modaldata,setModaldata] = useState({})
-    const [Allorders,setAllorders] = useState()
+    const [Allorders,setAllorders] = useState([])
 
     const all_enquiry =async () =>
     {
@@ -29,7 +29,7 @@ const MyOrders = () => {
              
              if(response.status===200){
               const data = response.data;
-              setAllorders(data?.enqueries)
+              setAllorders(data?.enqueries?.reverse())
               // Toast(data.message,response.status)
               
               
@@ -59,12 +59,13 @@ const MyOrders = () => {
     
   return (
     <>
+    {!Allorders?.length && ("no order found ")}
     {Allorders?.map((element, i)=>{
       
-      return     <div className=" myorder container ">
+      return  element?.link!='#' && (<div className=" myorder container ">
      <div className="myorder-box1">
     <p>{ new Date(element.created_at).toLocaleString()}</p>
-    <p>enquiry_id:{element.id} </p>
+    <p>Enquiry Id:{element.id} </p>
      </div>
      <div className="myorder-box2 d-flex" style={{flexDirection:'column',gridGap:'20px'}}>
     <div className="myorder-box-top">
@@ -91,11 +92,14 @@ const MyOrders = () => {
     </div>
     <div className="myorder-box-lower">
     <div >
-        <p> Your order is being evaluated by us</p>
+        {element?.status==0&&(<p style={{color:'red'}}> Cancelled</p>)}
+        {element?.status==1&&(<p style={{color:'red'}}>Pending <img src='images/pending.gif' style={{width:'20px'}}></img></p>)}
+        {element?.status==2&&(<p style={{color:'grey'}}> <img src='images/pending.gif' style={{width:'20px'}}></img>Completed</p>)}
+        {element?.status==3&&(<p style={{color:'green'}}>Approved</p>)}
     </div>
     <div >
     <button type="button" className='viewdetails' onClick={()=>{setModaldata(element);setshow(true)}}>view details </button>
-    <button type="button" className='edit-inv-btn' >Edit inventry</button>
+    {/* <button type="button" className='edit-inv-btn' >Edit inventry</button> */}
     </div>
 
     </div>
@@ -103,16 +107,17 @@ const MyOrders = () => {
 
      </div>
      </div>
+    )
     })}
 
 
     {Modaldata ? 
 
-      <Modal show={show} onHide={()=>setshow(false)} scrollable={true} >
+      <Modal show={show} onHide={()=>setshow(false)} scrollable={true} size='lg'>
 <Modal.Header closeButton >
   <Modal.Title>details </Modal.Title>
 </Modal.Header>
-<Modal.Body scrollable={true}>
+<Modal.Body scrollable={true} >
 <div className=" d-flex" style={{flexDirection:'column',gridGap:'10px'}}>
 <div className="myorder-modal-top">
 <div style={{flex:0.75}}>
@@ -121,7 +126,7 @@ const MyOrders = () => {
 </div>
 <div style={{flex:1}}>
 <h6>What To Move ?</h6>
-<p>from:{Modaldata?.from_bhk}  to:{Modaldata?.to_bhk}</p>
+<p>{Modaldata?.from_bhk} BHK</p>
 </div>
 </div>
 
@@ -190,7 +195,7 @@ const MyOrders = () => {
   <button className="viewdetails" onClick={()=>setshow(false)}>
     Close
   </button>
-  <button className="edit-inv-btn" onClick={()=>{window.print();}}>
+  <button className="edit-inv-btn"  onClick={()=>window.open(Modaldata?.link,"_blank")}>
     print 
   </button>
 </Modal.Footer>

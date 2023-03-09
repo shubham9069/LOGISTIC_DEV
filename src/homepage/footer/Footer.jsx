@@ -1,6 +1,7 @@
 import React from 'react'
 import './footer.css'
 import { logo } from '../assest'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
@@ -19,22 +20,23 @@ const Footer = () => {
             </div>
         </div>
         <div className ='footer-box d-flex flex-column'>
-                    <a>Home</a>
-                    <a>service</a>
-                    <a>customer</a>
-                    <a>about</a>
-                    <a>faq</a>
+        <a style={{fontWeight: 600,fontSize:'16px'}}> Menu</a>
+                    <Link to='/' className=" link-a">Home</Link>
+                    {/* <Link to='/'>service</Link> */}
+                    <Link to='/profile'  className=" link-a" >Customer</Link>
+                    <Link to='/Aboutus'  className=" link-a">About</Link>
+                    <a onClick={()=>document.getElementById("question-box").scrollIntoView()}>Faq</a>
             
         </div>
         <div className ='footer-box d-flex flex-column'>
-                    <a>contact us </a>
+                    <a style={{fontWeight: 600,fontSize:'16px'}}>contact us </a>
                     <a>registered office </a>
                     <a className="address">No. - B 44, 1st Floor, DDUTTL, Opp Kanteerava Studio, Yeshwanthpur, Bangaluru - 560022</a>
                     
             
         </div>
         <div className ='footer-box d-flex flex-column'>
-                    <a>Corparate Office</a>
+                    <a style={{fontWeight: 600,fontSize:'16px'}}>Corparate Office</a>
                     <a className="address">No. 272, Bharat Tower, Ashok Vihar Phase - 3, Futa Road, Near Krishna Chock, Gurugram - 122001<br/>
                         +91 - 9311693666<br/>
                         +91 - 8930768287<br/>

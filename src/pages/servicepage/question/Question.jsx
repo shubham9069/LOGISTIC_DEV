@@ -2,16 +2,30 @@ import React,{useState} from 'react'
 import { Fade } from 'react-reveal'
 import './question.css'
 
-function Question() {
+function Question({QuesArr}) {
   const [show,setShow] = useState()
 
   const handlestate=(e)=>{
      const name = e.target.name;
      
   }
+
+const showhide =(index)=>{
+
+var div = document.getElementById("question"+index)
+
+if(div.childNodes[1].style.display=='none'){
+  div.childNodes[1].style.display='inline-block'
+}
+else{
+  div.childNodes[1].style.display='none'
+}
+}
+
+
   return (
     <>
-  <div className="py-5 section-margin ">
+  <div className="py-5 section-margin " id="question-box">
    <div className="container">
         <div className="row center-div" style={{flexDirection:'column'}}>
            <div className="col-sm-12 col-lg-8 center-div" style={{marginBottom:'2rem'}}>
@@ -20,42 +34,21 @@ function Question() {
            </div>
            <div className="col-sm-12 col-lg-8 d-flex flex-column" style={{width: '100%',maxWidth: '1000px',gridGap:'20px'}}>
 
-               <div className="question" onClick={()=>setShow(!show)}>
+            {QuesArr?.map((element,index)=>{
+
+                return <div className="question" id={"question"+index} onClick={()=>showhide(index)}>
                <div>
-                <p>1. Can i Reschedule my movement after i have paid the token amount?</p>
+                <p>{index+1} {element?.question}</p>
                 <i class="bi bi-caret-down-fill"></i>
                 </div>
-
-                {show?
                 <Fade top>
-                <div className="ANIMATION" style={{backgroundColor:'white'}}>Can i Reschedule my movement after i have paid the token amount?</div>
+                <div className="ANIMATION" style={{backgroundColor:'white',display: 'none'}}> {element?.answer}</div>
                 </Fade>
-                :null }
+               
                </div>
-               <div className="question" onClick={()=>setShow(!show)}>
-               <div>
-                <p>2. Can i Reschedule my movement after i have paid the token amount?</p>
-                <i class="bi bi-caret-down-fill"></i>
-                </div>
-
-                {show?
-                <Fade top>
-                <div className="ANIMATION" style={{backgroundColor:'white'}}>Can i Reschedule my movement after i have paid the token amount?</div>
-                </Fade>
-                :null }
-               </div>
-               <div className="question" onClick={()=>setShow(!show)}>
-               <div>
-                <p>3. Can i Reschedule my movement after i have paid the token amount?</p>
-                <i class="bi bi-caret-down-fill"></i>
-                </div>
-
-                {show?
-                <Fade top>
-                <div className="ANIMATION" style={{backgroundColor:'white'}}>Can i Reschedule my movement after i have paid the token amount?</div>
-                </Fade>
-                :null }
-               </div>
+            })}
+               
+              
            </div>
            </div>
 </div>

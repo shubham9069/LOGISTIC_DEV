@@ -74,9 +74,14 @@ const updateorder=async(e)=>{
     <HeadShake spy={spy}>
     <select className="getestimate-input" value={from_floor} onChange={e=>setFrom_Floor(e.target.value)}>
     <option selected value="" >Floor</option>
-    <option  >1st</option>
-    <option >2st</option>
-    <option >3st</option>
+    <option  >1st Floor</option>
+    <option >2nd Floor</option>
+    <option >3rd Floor</option>
+    <option >4th Floor</option>
+    <option >5th Floor</option>
+    <option >6th Floor</option>
+    <option >7th Floor</option>
+    <option >More Then 8 Floor </option>
     </select>
     </HeadShake>
    
@@ -96,9 +101,14 @@ const updateorder=async(e)=>{
     <HeadShake spy={spy}>
     <select className="getestimate-input" value={to_floor} onChange={e=>setTo_Floor(e.target.value)}>
     <option selected value="" >Floor</option>
-    <option>1st</option>
-    <option >2st</option>
-    <option >3st</option>
+    <option  >1st Floor</option>
+    <option >2nd Floor</option>
+    <option >3rd Floor</option>
+    <option >4th Floor</option>
+    <option >5th Floor</option>
+    <option >6th Floor</option>
+    <option >7th Floor</option>
+    <option >More Then 8 Floor </option>
     </select>
     </HeadShake>
     <p>floor with service lift</p>

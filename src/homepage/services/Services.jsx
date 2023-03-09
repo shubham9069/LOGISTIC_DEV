@@ -7,7 +7,7 @@ import { warehouse,train,exchange,canvas,delivery,briefcase } from '../assest/in
 const Services = () => {
   return (
     <>
-<div className="about-section py-5 section-margin " style={{padding:'2rem'}}>
+<div className="about-section py-5 section-margin " style={{padding:'1rem'}}>
     <div className="container service ">
         <div className="row">
             <div className="col-sm-12 col-lg-7">
@@ -74,8 +74,8 @@ const Services = () => {
                        <img src={canvas} alt="" className="img-fluid"/>
                        
                     </div>
-                   <p className="service-tile-heading">Fine Art Shipping</p>
-                   <p className="service-tile-text"> Our Professional and highly trained team members will makes your shifting very smooth and without any damage.</p>
+                   <p className="service-tile-heading">Corporate Shifting</p>
+                   <p className="service-tile-text"> Quality Service Guarantee. Flexible Pricing. Packers & Movers Services. Competitive Quote. We provide Best and reliable Packing and moving service in Gurgaon at lowest cost.</p>
                 </div>
             </div>
         </div>

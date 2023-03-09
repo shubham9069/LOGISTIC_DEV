@@ -12,12 +12,13 @@ import { image5,image6,image7,image8,image9,image10,image11,image12 } from '../a
 
 const Slider = () => {
   return (
-    <>
+    <>  
         <div className="slider padding4rem">
     <Swiper 
-        slidesPerView={4}
+
+        slidesPerView={5}
         spaceBetween={30}
-        slidesPerGroup={4}
+        slidesPerGroup={5}
         loop={true}
         loopFillGroupWithBlank={true}
         // pagination={{

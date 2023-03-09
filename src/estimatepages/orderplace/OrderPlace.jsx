@@ -90,8 +90,8 @@ Simply check the package option and let us know, or let us recommed the most pop
             </div>
             <div>
             <strong>Move Type</strong>
-                <p>{order_data?.from_bhk}</p>
-                <p>{order_data?.to_bhk}</p>
+                <p>Room : {order_data?.from_bhk} Bhk</p>
+                {/* <p>{order_data?.to_bhk} Bhk</p> */}
             </div>
             <div>
             <strong>User Information</strong>
@@ -101,18 +101,18 @@ Simply check the package option and let us know, or let us recommed the most pop
             </div>
             <div>
             <strong>From</strong>
-                <p>{order_data?.from_floor} Floor</p>
-                <p>{order_data?.from_location}</p>
+                <p>Floor : {order_data?.from_floor} </p>
+                <p>Location : {order_data?.from_location}</p>
             </div>
             <div>
             <strong>To</strong>
-                <p>{order_data?.to_floor} Floor</p>
-                <p>{order_data?.to_location} </p>
+                <p>Floor : {order_data?.to_floor} </p>
+                <p>Floor : {order_data?.to_location} </p>
             </div>
             <div>
             <strong>Date & TimeSlot</strong>
-                <p>{new Date(order_data?.created_at).toUTCString()}</p>
-                <p>{new Date(order_data?.updated_at).toUTCString()}</p>
+                <p> Created: {new Date(order_data?.created_at).toUTCString()}</p>
+                <p> Updated: {new Date(order_data?.updated_at).toUTCString()}</p>
             </div>
         </div>
         <div>
