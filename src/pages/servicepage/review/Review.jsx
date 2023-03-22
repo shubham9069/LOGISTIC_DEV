@@ -10,10 +10,28 @@ const getstar =(rating) => {
     var total = 5
     var star =[]
     for(var i=0; i<rating;i++){
-        star.push(<i class="bi bi-star-fill"></i>)
+        star.push(<div 
+            style={{clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)', 
+            background:"#fed001",
+            height:20,
+            width:20
+            
+            }}
+           >
+
+            </div>)
     }
     for(var i=0; i<total-rating;i++){
-        star.push(<i class="bi bi-star"></i>)
+        star.push(<div 
+            style={{clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)', 
+            background:'#D9D1D1',
+            height:20,
+            width:20
+            
+            }}
+           >
+
+            </div>)
     }
     return star
 }
@@ -32,10 +50,10 @@ const getstar =(rating) => {
            {reviewArr?.map((element, i) =>{
 
                 return <div className="review-box ">    
-                <p>{element?.name} </p>
+                <p>{element?.customer_name} </p>
                 <div>
                 <h6>{element?.designation}</h6>
-                <p>{element?.quot}</p>
+                <p>{element?.review}</p>
                 <div className='review-star'>
                     {getstar(element?.rating)}
                 </div>
@@ -64,7 +82,11 @@ const getstar =(rating) => {
            </div>
            <div className="col-sm-12 col-lg-8" style={{width: '100%'}} >
                 {/* <p className="section-subheading">WE ARE GROWING</p> */}
-                <p style={{margin:'2rem 0',textAlign:'center'}}> Budget Logistic and Packers is a professional and reputed relocation service provider based in Bangalore. Our main objective is to make the process of goods shifting relatively easy for you. We make sure that you have an unforgettable experience by minimizing all the worries related to goods shifting. Budget Logistic and Packers is a professional and reputed relocation service provider based in Bangalore. Our main objective is to make the process of goods shifting .</p>
+                <p 
+                style={{margin:'2rem 0',textAlign:'center',fontweight: 400,
+    fontSize: 16,
+    lineHeight: '155.02%',
+    color: '#727272'}}> Budget Logistic and Packers is a professional and reputed relocation service provider based in Bangalore. Our main objective is to make the process of goods shifting relatively easy for you. We make sure that you have an unforgettable experience by minimizing all the worries related to goods shifting. Budget Logistic and Packers is a professional and reputed relocation service provider based in Bangalore. Our main objective is to make the process of goods shifting .</p>
            </div>
            </div>
 </div>

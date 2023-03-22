@@ -9,6 +9,8 @@ import Fade from 'react-reveal/Fade';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import HeadShake from 'react-reveal/HeadShake';
+import Loader from '../../Loader'
+
 
 
 const SelectItem = () => {
@@ -22,6 +24,7 @@ const SelectItem = () => {
     const [show, setShow] = useState(false);
     const [data, setdata] = useState();
     const [spy,setSpy] = useState(false)
+    const [quantity,setQuantity] = useState("")
 
     const room_id = useParams().room_id
     console.log(room_id)
@@ -49,7 +52,8 @@ const SelectItem = () => {
       
         
     }
-    const show_data=(input_name,attribute_name)=>{
+    const show_data=(attribute,input_name)=>{
+  
       
      
       // console.log(enquiry_data?.products[productAtt?.name])
@@ -57,7 +61,7 @@ const SelectItem = () => {
       
       var array = enquiry_data?.products[productAtt?.name]?.some((element,index)=>{
        
-        return element.attribute_value==input_name && element?.attribute_name== attribute_name
+        return element.attribute_value==attribute && element?.attribute_name== input_name
       })
       return array
       
@@ -91,6 +95,7 @@ const SelectItem = () => {
          
          
            }
+          
          
 
     }
@@ -117,7 +122,7 @@ const SelectItem = () => {
    const enqdata =async(id)=>{
   
     try{
-        
+        setIsLoading(true)
         const response= await axios({
           method: "get",
          url:`get_details?enquiry_id=${id}&room_id=${room_id}`,
@@ -141,6 +146,8 @@ const SelectItem = () => {
      
      
        }
+      
+     
      
 
 }
@@ -148,12 +155,12 @@ const SelectItem = () => {
 
     const update_product=async()=>{
         
-        if(!data){
-             setSpy(!spy);
-             return Toast("plx fill attributres ")
-        } 
+        // if(!data){
+        //      setSpy(!spy);
+        //      return Toast("plx fill attributres ")
+        // } 
         
-         const obj={...data,enquiry_id,product_id:productAtt?.id}
+         const obj={...data,enquiry_id,product_id:productAtt?.id,room_id,quantity:quantity || '1'}
         try{
             setIsLoading(true)
             const response= await axios({
@@ -169,6 +176,7 @@ const SelectItem = () => {
               const data = response.data;
               enqdata(enquiry_id)
                 setdata()
+                setQuantity("")
                 setShow(false)
               Toast(data.message,response.status)
               
@@ -189,6 +197,7 @@ const SelectItem = () => {
   return (
     enquiry_id ?
     <>
+    {isLoading &&(<Loader/>)}
     <div className="selectitem section-padding">
     <div className="container">
     <Fade top>
@@ -206,10 +215,11 @@ const SelectItem = () => {
     </div>
     {product?.map((element)=>{
       
-        return <div className='selectitem-card-content ' onClick={()=>filter_product(element.id,element.name)}>
-        <div className='center-div'>
-        <img src={element?.icon}/>
-        <p style={{margin:'0'}}>{element.name || "hjvvh"}</p>
+        return <div className='selectitem-card-content ' onClick={()=>filter_product(element.id,element?.name)}>
+        <div className='d-flex justify-content-between align-items-center'>
+        <img src={element?.icon} style={{width:30,height:30}}/>
+        <p style={{margin:'0',flex:2}}>{element?.name || "hjvvh"}</p>
+        {enquiry_data?.hasOwnProperty("products") ? enquiry_data?.products[element?.name]?.length != 0 &&(<i class="bi bi-check-circle-fill"></i>):null}
         </div>
         {/* <input type="radio" id="huey" name="drone" checked={enquiry_data?.products true:false} ></input> */}
     </div>
@@ -265,15 +275,18 @@ const SelectItem = () => {
     </div>
 
     <Modal show={show} onHide={()=>{setdata();setShow(false)}} size='lg'>
+    {isLoading &&(<Loader/>)}
         <Modal.Header closeButton>
-          <Modal.Title>selcted your item </Modal.Title>
+          <Modal.Title>select your item </Modal.Title>
         </Modal.Header>
-        <Modal.Body className="modal-attr center-div" >
+        <Modal.Body className="modal-attr d-flex justify-content-center" >
         {productAtt?.attributes?.map((element)=>{
+         
           var data = JSON.parse(element?.value)
+          
             return  <Form.Group className="mb-3 d-flex " controlId="formBasicPassword" style={{gridGap:'20px',}}>
         <Form.Label style={{}} >{element.name+" : "}</Form.Label>
-        <div style={{display:'flex',flexWrap:'wrap'}}>
+        <div style={{display:'flex',flexWrap:'wrap'}}> 
         
         {data?.rows?.map((item)=>{
           
@@ -282,15 +295,23 @@ const SelectItem = () => {
         <input type="radio" value={item?.value} defaultChecked={show_data(item?.value,element?.name)}  style={{marginLeft:'1rem',width:'17px',height:'17px'}} name={element?.name} onChange={handlechange} />
         <label style={{padding:'0 10px'}}>{item?.value}</label>
         </HeadShake>
+       
         </div>
         })}
+        
         </div>
+        
        
       </Form.Group>
         })}
-      
+
+        <Form.Group className="mb-3 d-flex " controlId="formBasicPassword" style={{gridGap:'20px',}}>
+        <Form.Label style={{}} >Quantity</Form.Label>
+        <input type="number" className="getestimate-input" placeholder='Quantity' style={{minWidth: '230px'}} value={quantity} onChange={e=>setQuantity(e.target.value)} />
+        </Form.Group> 
       </Modal.Body>
         <Modal.Footer>
+
           <button  className="selected-button" style={{background: '#E1E0E0'}} onClick={() =>{setdata();setShow(false)}}>
             Close
           </button>

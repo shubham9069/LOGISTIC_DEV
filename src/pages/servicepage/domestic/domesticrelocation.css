@@ -11,10 +11,11 @@
 
 .relocation-text {
    
-    
+    font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 25px
+    line-height: 155.02%;
+    color: #727272;
 }
 .relocation-tile{
     width: 156.07px;

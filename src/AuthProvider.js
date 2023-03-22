@@ -9,7 +9,8 @@ const AuthProvider = ({children}) => {
     const [enquiry_id,setEnquiry_id] = useState("")
     const [HomePage, setHomePage] = useState({
       testimonial:[],
-      city:[]
+      city:[],
+      gallery:[]
     })
     
   //   const initialFetch = {

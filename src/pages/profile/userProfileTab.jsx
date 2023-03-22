@@ -13,6 +13,7 @@ const [isLoading,setIsLoading] = useState(false)
 const {userData,setUserData,userToken} = useContext(AuthContext)    
 const [oldPassword,setoldPassword] = useState("")
 const [newPassword,setnewPassword] = useState("")
+const [images,setimages] = useState("")
     
     const [users, setUsers] = useState({
         name: userData?.name,
@@ -35,18 +36,20 @@ const [newPassword,setnewPassword] = useState("")
      if(!email) return Toast("please fill properly")
      if( !validator.isEmail(email)) return Toast("email is not valid")
    
-    
+     var form = new FormData()
+    form.append('name',name)
+    form.append('email',email)
+    form.append('user_id',userData?.id)
+    form.append('images',images)
      try{
       setIsLoading(true)
       const response= await axios({
         method: "post",
        url:'/update-profile ',
-        data:{
-          name,email,user_id:userData?.id
-        },
+        data:form,
         headers: {
           Authorization:`Bearer ${userToken}`,
-          "Content-Type": "application/json",
+          "Content-Type": "multipart/form-data",
           
         },
        })
@@ -105,6 +108,7 @@ const [newPassword,setnewPassword] = useState("")
     <div className="d-flex" style={{gridGap:'40px',margin: "1.5rem  0",flexWrap:'wrap'}}>
     <input className='profile-input' type='name' placeholder="Enter full name" name="name" value={name} onChange={e => onchange(e)}></input>
     <input className='profile-input' type='name' placeholder="Enter Email" name="email" value={email} onChange={e => onchange(e)}></input>
+    <input className='profile-input' type='file'  name="images"  onChange={e => setimages(e.target.files[0])}></input>
       
       
     </div>

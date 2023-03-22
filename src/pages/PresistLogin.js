@@ -2,6 +2,8 @@ import {Outlet} from 'react-router-dom'
 import {react,useEffect,useContext,useState} from 'react'
 
 import {AuthContext} from '../AuthProvider'
+import Loader from '../Loader'
+
 
 
 const PresistLogin =()=>{
@@ -24,6 +26,7 @@ const PresistLogin =()=>{
             setEnquiry_id(enquiry__data)
             setUserData(data)
             setIsLoading(false)
+            return 
         }
       
 
@@ -35,7 +38,7 @@ const PresistLogin =()=>{
     return (
         <>
         {isloading  
-            ? <div id="cover-spin"></div>
+            ? <Loader/>
             :<Outlet/>
          }
     </>

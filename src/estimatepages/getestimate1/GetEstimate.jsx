@@ -77,7 +77,7 @@ const GetEstimate = () => {
     <p>I Am Shifting My </p>
     <HeadShake spy={spy}>
     <select className="getestimate-input" value={bhk} onChange={e=>setBhk(e.target.value)}>
-    <option selected value="" >BHK</option>
+    <option selected hidden >Select BHK</option>
     <option value='1'>1BHK</option>
     <option value='2'>2BHK</option>
     <option value='3'>3BHK</option>

@@ -1,5 +1,10 @@
 .footer{
     box-shadow:0px -3px 13px 0px rgba(11, 47, 138, 0.3) ;
+    padding-bottom: 0  !important;
+    background: #0377b5;
+}
+.footer *{
+    color:white !important;
 }
 
 .footer-box{
@@ -8,6 +13,16 @@
     flex-direction:column;
     line-height: 35px;
     
+    
+}
+.footer-box>img{
+    width: 200px;
+    
+}
+
+.footer-box .bi{
+font-size: 1.5rem !important;    
+
     
 }
 .footer-box>a{
@@ -21,19 +36,26 @@ font-size: 14px;
     
 }
 .address{
-    color: black !important;
+    color: black ;
     line-height: 22px !important;
     text-decoration: none !important;
 }
 .footer-bottom{
-    border-top: 1px solid rgba(0, 0, 0, 0.17);
-    padding-top: 2rem;
+    border-top: 1px solid rgb(229, 229, 229);
+    padding-top: 1rem;
     margin-top: 2rem;
 
     
 }
 .footer-bottom>div{
     display: flex;justify-content: space-between;
+
+    
+}
+.footer-bottom>div>*{
+   font-size:12px;
+   flex:1;
+   text-align: center;
 
     
 }

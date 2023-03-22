@@ -5,10 +5,12 @@ import axios from '../../axios'
 import { useNavigate,Link,useLocation } from 'react-router-dom'
 import { AuthContext } from '../../AuthProvider'
 import Fade from 'react-reveal/Fade';
+import Loader from '../../Loader'
+
 
 const Rooms = () => {
   const navigate = useNavigate()
-    const {userToken,enquiry_id} = useContext(AuthContext)
+    const {userToken,enquiry_id,setEnquiry_id} = useContext(AuthContext)
 const [isLoading,setIsLoading] =useState(true)
 const [roomsdata,setRoomData] = useState([]);
 const [enquiry_data,setEnquiry_Data] =useState([])
@@ -63,8 +65,18 @@ const enqdata =async()=>{
        
        if(response.status===200){
         const data = response.data;
+        if(data?.enquery?.status == 5){
+          setEnquiry_id("");
+          window.localStorage.removeItem('enquiry_id');
+          Toast("your previous enquiry has been completed plz fill new one ",200)
+          navigate("/getestimate1");
+          
+
+          return 
+        }
         setEnquiry_Data(data.enquery)
         Toast(data.message,response.status)
+      
         
         
        }
@@ -75,6 +87,9 @@ const enqdata =async()=>{
       
    
    
+     }
+     finally{
+      setIsLoading(false)
      }
    
 
@@ -91,6 +106,7 @@ useEffect(()=>{
 },[])
   return (
     <>
+    {isLoading &&(<Loader/>)}
     <div className="section-padding rooms">
     <div className="container">
     <Fade top>
@@ -103,15 +119,15 @@ useEffect(()=>{
     <div className="rooms-box center-div">
     {roomsdata?.rooms?.map((element, index) =>{
       
-        return  <Link to={'/selectitem/'+element.id} className="rooms-card1 center-div">
-    <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZGluaW5nJTIwcm9vbXxlbnwwfHwwfHw%3D&w=1000&q=80" ></img>
+        return  <Link to={'/selectitem/'+element.id}  className="rooms-card1 center-div">
+    <img src={element?.image}></img>
     <p>{element?.name}</p>
     </Link>
     })}
     {roomsdata?.bedrooms?.map((element, index) =>{
       
         return  <Link to={'/selectitem/'+element.id} className="rooms-card1 center-div">
-    <img src="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8ZGluaW5nJTIwcm9vbXxlbnwwfHwwfHw%3D&w=1000&q=80" ></img>
+    <img src={element?.image}></img>
     <p>{element?.name}</p>
     </Link>
     })}

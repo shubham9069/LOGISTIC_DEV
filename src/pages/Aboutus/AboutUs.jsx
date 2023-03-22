@@ -1,14 +1,16 @@
 
 import React,{useEffect,useState} from 'react'
 import axios from '../../axios'
+import Loader from '../../Loader'
 import Toast from '../../Toast'
 import './Aboutus.css'
 
 
 
+
 const AboutUs = () => {
   const [content,setcontent] = useState({})
-  const [isLoading,setIsLoading] = useState(false)
+  const [isLoading,setIsLoading] = useState(true)
 
 
   const AboutUs =async () =>
@@ -52,10 +54,10 @@ const AboutUs = () => {
   },[])
   return (
     <>
-
+      {isLoading &&(<Loader/>)}
         <top>
-      <div className="about-us-top" style={{backgroundImage:`url(${content?.banner})`}}>
-        <h1>{content?.name}</h1>
+      <div className="about-us-top" style={{background:`url(${content?.banner}) no-repeat center `}}>
+        {/* <h1>{content?.name}</h1> */}
       </div>
 
       <div className="about-us-bottom">

@@ -10,6 +10,8 @@ import axios from '../../axios'
 import { packermover,relocation } from './assest/exportfiles'
 import { useParams } from 'react-router-dom'
 import { AuthContext } from '../../AuthProvider'
+import Loader from '../../Loader'
+
 
 
 
@@ -57,14 +59,6 @@ const Service1 = ({title}) => {
   
   }
 
-const getstar =(rating) => {
-
-  var star =[]
-  for(var i=0; i<rating;i++){
-      star.push(<i class="bi bi-star-fill"></i>)
-  }
-  return star
-}
 
 
 
@@ -83,13 +77,13 @@ const getstar =(rating) => {
           setIsLoading(true)
           const response= await axios({
             method: "get",
-           url:'/get_testimonials',
+           url:'/get_all_reviews',
             
             } )
            
            if(response.status===200){
             const data = response.data;
-            setHomePage((p)=>({...p,["testimonial"]:data?.testimonials}))
+            setHomePage((p)=>({...p,["testimonial"]:data?.reviews}))
             // Toast(data.message,response.status)
             
             
@@ -121,6 +115,7 @@ const getstar =(rating) => {
   
   return (
     <>
+    {isLoading &&(<Loader/>)}
         <Contact_Form Title={serviceData?.banner_title} img={serviceData?.banner} />
 
         <DomesticReloaction title={serviceData?.second_block?.heading} img={serviceData?.second_block?.image} text={serviceData?.second_block?.text}/>

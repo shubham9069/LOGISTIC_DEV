@@ -4,7 +4,7 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   color: black;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-weight: 400;
 
 }
@@ -40,10 +40,10 @@ margin: 0 2rem !important
 padding: 0 2rem 
 }
 .btn-design{
-  padding: 0.6rem 1.5rem !important ;
+  padding: 0.6rem 1.2rem !important ;
   border: none !important;
   color:white !important;
-  font-size: 16px;
+  font-size: 14px !important;
 line-height: 19px; border-radius: 10px;
 background: #088FD8;
 }

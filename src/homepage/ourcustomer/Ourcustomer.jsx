@@ -20,13 +20,13 @@ const Ourcustomer = () => {
             setIsLoading(true)
             const response= await axios({
               method: "get",
-             url:'/get_testimonials',
+             url:'/get_all_reviews',
               
               } )
              
              if(response.status===200){
               const data = response.data;
-              setHomePage((p)=>({...p,["testimonial"]:data?.testimonials}))
+              setHomePage((p)=>({...p,["testimonial"]:data?.reviews}))
               // Toast(data.message,response.status)
               
               
@@ -49,10 +49,28 @@ const Ourcustomer = () => {
         var total = 5
         var star =[]
         for(var i=0; i<rating;i++){
-            star.push(<i class="bi bi-star-fill"></i>)
+            star.push(<div 
+                style={{clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)', 
+                background:"#fed001",
+                height:20,
+                width:20
+                
+                }}
+               >
+    
+                </div>)
         }
         for(var i=0; i<total-rating;i++){
-            star.push(<i class="bi bi-star"></i>)
+            star.push(<div 
+                style={{clipPath: 'polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)', 
+                background:'#D9D1D1',
+                height:20,
+                width:20
+                
+                }}
+               >
+    
+                </div>)
         }
         return star
     }
@@ -77,7 +95,7 @@ const Ourcustomer = () => {
            <div className="row py-5 " id="width1000">
                <div className="col-sm-12 col-lg-8" Style={'flex:1'}>
 
-               <video src="https://shubham9069.github.io/advertisment/sizzle-preview-1.mp4" 
+               <video src="images/budget_2_2.mp4" 
                 muted
                  autoPlay
                 loop  id="myVideo"/>
@@ -91,7 +109,7 @@ const Ourcustomer = () => {
       <div className="testimonial-container h-100">
                        <div className="row" Style="height:80%;">
                            <div className="col-6 mt-auto">
-                               <img src="https://lh3.googleusercontent.com/a/AEdFTp4GSK5Eamn44VVjLbQCHMOahseAT32sGBMnbaLz=s432-p-rw-no" alt="" Style="height: 70px;width: 70px; border-radius: 50%;"/>
+                               <img src={element?.avatar} alt="" Style="height: 70px;width: 70px; border-radius: 50%;"/>
                            </div>
                            <div className="col-6" Style="margin-top:auto;">
                                <div className="d-flex" Style="justify-content:flex-end; ">
@@ -100,12 +118,12 @@ const Ourcustomer = () => {
                                
                            </div>
                            <div className="col-12">
-                               <p align="justify" className="py-3 our-customer-right-text">{element?.quot}</p>
+                               <p align="justify" className="py-3 our-customer-right-text">{element?.review}</p>
                            </div>
                        </div>
                        
                        <div className="d-flex" Style="flex-direction:column; justify-content:flex-end; height:20%;">
-                           <b className="pt-5" Style={'font-weight: 800;font-size: 14.4354px;line-height: 15px; margin-bottom:0.5rem'}>{element?.name}</b>
+                           <b className="pt-5" Style={'font-weight: 800;font-size: 14.4354px;line-height: 15px; margin-bottom:0.5rem'}>{element?.customer_name}</b>
                            <span Style="font-weight: 400;font-size: 10px;line-height: 10px;">{element?.designation}</span>
                        </div>
                    </div>

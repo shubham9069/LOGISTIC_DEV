@@ -5,6 +5,8 @@ import {hours,estimate} from '../assest/index'
 import axios from '../../axios'
 import validator from 'validator'
 import Toast from '../../Toast'
+import Loader from '../../Loader'
+
 
 const Contact = () => {
     const [isLoading,setIsLoading] = useState(false)
@@ -60,11 +62,12 @@ const Contact = () => {
       }
   return (
     <>
-     <div className="contact-section section-padding" style={{background:'#088FD8', color:'white'}}>
+    {isLoading &&(<Loader />)}
+     <div className="contact-section section-padding" style={{color:'white'}}>
     <div className="container">
         <div className="row">
             <div className="col-lg-6 col-12">
-                <h2 className=' feelfree' >Feel free to contact us </h2>
+                <h5 className=' feelfree' >Feel free to contact us </h5>
 
                 <div className="mt-5">
                     <div className="d-flex align-items-center mb-3">
@@ -91,22 +94,16 @@ const Contact = () => {
                 </div>
                 <div className="mt-5">
                     <p className="text-white contactleft-text">
-                    �If you have any questions, feedback, or requests for our budget and packer mover services, we would love to hear from you. Our team is dedicated to providing excellent customer service and ensuring that your move is as smooth and stress-free as possible. <br/>
-                    �You can reach us by phone at +91 - 9311693666 or by email at info@budgetlogisticspackers.com . Alternatively, you can fill out the contact form below and we will get back to you as soon as possible. 
+
+                    You can reach us by phone at +91 - 9311693666 or by email at info@budgetlogisticspackers.com . Alternatively, you can fill out the contact form below and we will get back to you as soon as possible. 
                     </p>
                 </div>
 
-                <div className="mt-5 d-flex">
-                    <img src= 'https://instagram.fdel10-1.fna.fbcdn.net/v/t51.2885-19/280800452_528342632072866_3685802488877854547_n.jpg?stp=dst-jpg_s320x320&_nc_ht=instagram.fdel10-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=5gwRmKICISsAX8lpUWn&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfCkw3E4arDWsGZ7d398nWqu0L4oNzToy1tRWrcaf6eoBw&oe=63CF6C06&_nc_sid=8fd12b' alt="" className="founder-icon me-3"/>
-                    <div className="mt-auto">
-                        <span  className="text-white heading">Anis Morsalin</span>
-                        <p Style="font-size:12px;" className="text-white contactleft-text">Director @Digitalbus</p>
-                    </div>
-                </div>
+            
             </div>
             <div className="col-lg-6 col-12">
                 <div className="contact-form">
-                    <h3 className="text-center text-uppercase">Contact With Us</h3>
+                    <h5 className="text-center text-uppercase" style={{fontWeight:700}}>Contact With Us</h5>
                     <div className="row mt-5">
                         <div className="col-6 mt-3">
                             <div className="form-group">
@@ -137,7 +134,7 @@ const Contact = () => {
 
                         <div className="col-12 mt-3">
                             <div className="form-group">
-                                <label for="message">message</label>
+                                <label for="message">Message</label>
                                <textarea name="message" id="message" cols="10" className="form-control"  onChange={handleChange}></textarea>
                             </div>
                         </div>

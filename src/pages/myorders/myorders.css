@@ -40,6 +40,8 @@ line-height: 28px
   
     font-weight: 600;
     font-size: 20px;
+    color: rgb(51, 51, 51);
+    
 
 }
 .myorder-box-top>div>p,.myorder-box-middle>div>p,.myorder-box-lower>div>p{
@@ -78,6 +80,7 @@ line-height: 28px
   
     font-weight: 600;
     font-size: 16px;
+    color: rgb(51, 51, 51);
 
 }
 .myorder-modal-top>div>p,.myorder-modal-middle>div>p,.myorder-modal-lower>div>p{
@@ -112,8 +115,5 @@ line-height: 28px
   font-size:0.8rem
 
 }
-.myorder-box-lower>div>p{
-    display: none;
-}
-    
+  
 }

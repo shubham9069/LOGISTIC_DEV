@@ -1,7 +1,25 @@
+.contact-section{
+      /* ff 3.6+ */
+      background:-moz-linear-gradient(90deg, rgba(59, 103, 153, 1) 0%, rgba(234, 244, 251, 1) 100%); 
 
+      /* safari 5.1+,chrome 10+ */
+      background:-webkit-linear-gradient(90deg, rgba(59, 103, 153, 1) 0%, rgba(234, 244, 251, 1) 100%);
+  
+      /* opera 11.10+ */
+      background:-o-linear-gradient(90deg, rgba(59, 103, 153, 1) 0%, rgba(234, 244, 251, 1) 100%);
+  
+      /* ie 6-9 */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EAF4FB', endColorstr='#3B6799', GradientType=0 );
+  
+      /* ie 10+ */
+      background:-ms-linear-gradient(90deg, rgba(59, 103, 153, 1) 0%, rgba(234, 244, 251, 1) 100%);
+  
+      /* global 94%+ browsers support */
+      background:linear-gradient(90deg, rgba(59, 103, 153, 1) 0%, rgba(234, 244, 251, 1) 100%);
+}
 .feelfree{
-    font-weight: 500;
-font-size: 36px;
+    font-weight: 600;
+font-size: 30px;
 line-height: 52px;
 color:white !important;
 }
@@ -35,14 +53,20 @@ line-height: 155.02%;
     border-radius: 16px;
     padding: 2rem ;
 }
+.contact-form label{
+    font-size: 14px;
+    font-weight:600 ;
+    color: #727272;
+}
 .submit-btn{
     width: 100%;
-    padding: 1rem 1rem !important;
-    border: none !important;
-    color:white !important;
-    font-size: 1.25rem !important;
-    background: #D2584D !important;
-  border-radius: 7px !important;
+    padding: 16px 26px;
+background: #eaf4fb !important;
+color:black !important;
+text-decoration: none;
+border-radius: 11px;
+font-size: 14px !important;
+font-weight:600 !important ;
 }
 
 

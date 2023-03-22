@@ -59,25 +59,36 @@ const [Navbar,setNavbar] = useState(false)
   },[])
   return (
     <>
+    <div className=''>
+      <div className=' mx-auto topheader' style={{margin: "0 auto",justifyContent:"center",textAlign:"center"}}>
+   
+      <div> 
+      <i className="bi bi-telephone-fill telicon" ></i>
+      <a href="tel:8808700087" className='mobile' style={{}}>+91 88-087-000-87 </a>
+      </div>
+ 
+      </div>
+    </div>
         <div className="main-div d-flex section-paddingX"   >
         <nav className="navbar navbar-expand-lg navigationbar "style={{padding :'1rem 0',width:'100%'}}  >
   <div className="container-fluid " style={{padding:0}}>
-   <Link to="/" className="link-a"><img className="navbar-brand" src={logo}></img></Link>
+   <Link to="/" className="link-a d-flex"><img className="navbar-brand" src={logo}></img>
+ 
+      </Link>
+   
     <button className="navbar-toggler" type="button" onClick={()=>setNavbar(!Navbar)}>
       <span className="navbar-toggler-icon"></span>
     </button>
-    <div className={Navbar? "collapse navbar-collapse  show":"collapse navbar-collapse "} id="navbarSupportedContent">
-      <ul className="navbar-nav  mb-2 mb-lg-0 ">
-        <li className="nav-item px-2">
-          <Link to="/" className="nav-link link-a" aria-current="page" >Home</Link>
-          <div className="nav-blue-bar"/>
-        </li>
-        {/* <li className="nav-item px-2">
-          <Link to='/service1' className="nav-link link-a" >Service</Link>
-        </li> */}
+    <div className={Navbar? "collapse navbar-collapse  show":"collapse navbar-collapse between-div "}>
+
+    <div id="number"> 
+      <i className="bi bi-telephone-fill telicon" style={{color:'#088FD8'}}></i>
+      <a href="tel:05384637335" className='mobile' style={{color:'black'}}>+91 88-087-000-87 </a>
+      </div>
+      <ul className="navbar-nav  mb-2 mb-lg-0 " style={{gridGap: '15px'}}>
+     
         
-      
-        <Dropdown className="nav-nav-item px-2">
+        <Dropdown className="nav-nav-item ">
       <Dropdown.Toggle className='nav-link' style={{backgroundColor:'white'}}>
         Services
       </Dropdown.Toggle>
@@ -89,7 +100,7 @@ const [Navbar,setNavbar] = useState(false)
           return <Link to={'/service1/'+element?.id} data-rr-ui-dropdown-item="" class="d-flex justify-content-between dropdown-item align-item-center drop-service" >
        
        <p >{element?.name}</p>
-       <i class="bi bi-caret-right-fill"></i>
+       <i class="bi bi-caret-right-fill" style={{fontSize:'12px'}}></i>
        
      </Link>
         })}
@@ -99,12 +110,29 @@ const [Navbar,setNavbar] = useState(false)
       </Dropdown.Menu>
     </Dropdown>
        
-      
-     
-        <li className="nav-item px-2">
-          <Link to="/Aboutus" className="nav-link" >About us </Link>
-        </li>
-        <li className="nav-item px-2">
+    <Dropdown className="nav-nav-item ">
+      <Dropdown.Toggle className='nav-link' style={{backgroundColor:'white'}}>
+        Company
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu >
+      <Link to={'/Faq'} data-rr-ui-dropdown-item="" class="d-flex justify-content-between dropdown-item align-item-center drop-service" >
+       
+       <p >Faq</p>
+       <i class="bi bi-caret-right-fill" style={{fontSize:'12px'}}></i>
+       
+     </Link>
+      <Link to='/Aboutus' data-rr-ui-dropdown-item="" class="d-flex justify-content-between dropdown-item align-item-center drop-service" >
+       
+       <p >About</p>
+       <i class="bi bi-caret-right-fill" style={{fontSize:'12px'}}></i>
+       
+     </Link>
+ 
+      </Dropdown.Menu>
+    </Dropdown>
+       
+        <li className="nav-item ">
           <Link to="/getestimate1" className="nav-link btn-design link-a" >Get Estimate</Link>
         </li>
        
@@ -153,13 +181,13 @@ const [Navbar,setNavbar] = useState(false)
 
 
                        <Dropdown.Item >
-                      <Link to='/myorders' className='darkLink' href="#/help" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', margin: 0 }}>
+                      <Link to='/myorders' className='darkLink'  style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', margin: 0 }}>
                       <i className="bi bi-list" style={{ marginRight: 20, fontWeight: 'bold', fontSize: 18 }}></i>
                         My Enquires</Link>
                     </Dropdown.Item>
 
                     <Dropdown.Item >
-                      <Link to='/help&support' className='darkLink' href="#/help" style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', margin: 0 }}>
+                      <Link to='/help' className='darkLink'  style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', margin: 0 }}>
                         <i className="bi bi-question-circle" style={{ marginRight: 20, fontWeight: 'bold', fontSize: 13 }}></i>
                         Help & Support</Link>
                     </Dropdown.Item>

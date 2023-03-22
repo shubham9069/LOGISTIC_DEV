@@ -96,7 +96,7 @@
     grid-gap:40px
 }
 .selectitem-card-content>div{
-   
+   width: 100%;
    grid-gap:20px
    
 }

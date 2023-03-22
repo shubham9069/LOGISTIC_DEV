@@ -73,7 +73,8 @@ const updateorder=async(e)=>{
     <p>I curretnly live on</p>
     <HeadShake spy={spy}>
     <select className="getestimate-input" value={from_floor} onChange={e=>setFrom_Floor(e.target.value)}>
-    <option selected value="" >Floor</option>
+    <option selected value="" hidden >Floor</option>
+    <option  >Ground Floor</option>
     <option  >1st Floor</option>
     <option >2nd Floor</option>
     <option >3rd Floor</option>
@@ -81,14 +82,14 @@ const updateorder=async(e)=>{
     <option >5th Floor</option>
     <option >6th Floor</option>
     <option >7th Floor</option>
-    <option >More Then 8 Floor </option>
+    <option >More Than 7 Floor </option>
     </select>
     </HeadShake>
    
     <p>Floor with service fit</p>
     <HeadShake spy={spy}>
     <select className="getestimate-input" value={from_lift} onChange={e=>setFrom_Lift(e.target.value)}>
-    <option selected value="" >Lift</option>
+    <option selected value="" hidden >Lift</option>
     <option value='1'>Available</option>
     <option value='0'>Not available</option>
     
@@ -100,7 +101,8 @@ const updateorder=async(e)=>{
     <p>I’m moving to</p>
     <HeadShake spy={spy}>
     <select className="getestimate-input" value={to_floor} onChange={e=>setTo_Floor(e.target.value)}>
-    <option selected value="" >Floor</option>
+    <option selected value="" hidden >Floor</option>
+    <option  >Ground Floor</option>
     <option  >1st Floor</option>
     <option >2nd Floor</option>
     <option >3rd Floor</option>
@@ -108,13 +110,13 @@ const updateorder=async(e)=>{
     <option >5th Floor</option>
     <option >6th Floor</option>
     <option >7th Floor</option>
-    <option >More Then 8 Floor </option>
+    <option >More Than 7 Floor </option>
     </select>
     </HeadShake>
-    <p>floor with service lift</p>
+    <p>Floor with service lift</p>
     <HeadShake spy={spy}>
      <select className="getestimate-input" value={to_lift} onChange={e=>setTo_Lift(e.target.value)}>
-    <option selected value="" >Lift</option>
+    <option selected value="" hidden >Lift</option>
     <option value='1' >Available</option>
     <option value='0'>Not available</option>
     
@@ -123,7 +125,7 @@ const updateorder=async(e)=>{
   </div>
 
   <div style={{width:'300px'}}> 
-  <buttom  className="getestimate-btn link-a" onClick={updateorder}> Next </buttom>
+  <button className=" link-a getestimate-btn " onClick={updateorder}> Next </button>
   </div>
 </div>
 

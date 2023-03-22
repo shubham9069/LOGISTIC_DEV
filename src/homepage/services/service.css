@@ -1,43 +1,73 @@
 .parent-of-card{
+    display: flex;
 grid-gap:41px;
 justify-content: center;
 align-items: center;
+flex-wrap: wrap;
 }
-
+.parent-of-card>div{
+    
+    flex: 1 1 250px;
+    padding: 2rem 1rem; 
+    background-color: #e7f3fb;
+    border-radius: 8px;
+   
+}
+.service-tile .img-fluid{
+    width:40px
+}
 
 .service-tile-heading{
     font-style: normal;
-font-weight: 500;
-font-size: 28px;
-line-height: 33px;
+font-weight: 600;
+font-size: 20px;
+line-height: 22px;
 /* identical to box height */
 
 margin: 1rem 0 !important;
 
-color: #4A4A4A;
+/* color: #4A4A4A; */
 }
 
 .service-tile-text{
     font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 155.02%;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 22px;
 
-color: #727272;
+color: #5d5d5d;
 }
 
 .get-qoutes{
-    background-color:  #088FD8;
-    height: 185px;
+      /* ff 3.6+ */
+      background:-moz-linear-gradient(90deg, rgba(59, 103, 153, 1) 0%, rgba(234, 244, 251, 1) 100%); 
+
+      /* safari 5.1+,chrome 10+ */
+      background:-webkit-linear-gradient(90deg, rgba(59, 103, 153, 1) 0%, rgba(234, 244, 251, 1) 100%);
+  
+      /* opera 11.10+ */
+      background:-o-linear-gradient(90deg, rgba(59, 103, 153, 1) 0%, rgba(234, 244, 251, 1) 100%);
+  
+      /* ie 6-9 */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EAF4FB', endColorstr='#3B6799', GradientType=0 );
+  
+      /* ie 10+ */
+      background:-ms-linear-gradient(90deg, rgba(59, 103, 153, 1) 0%, rgba(234, 244, 251, 1) 100%);
+  
+      /* global 94%+ browsers support */
+      background:linear-gradient(90deg, rgba(59, 103, 153, 1) 0%, rgba(234, 244, 251, 1) 100%);
+    height: 130px;
     width:100%
 }
 
 .quote-btn{
-    padding: 16px 32px;
-background: #D2584D;
-color:white;
+    padding: 12px 26px;
+background: #eaf4fb;
+color:black !important;
 text-decoration: none;
 border-radius: 11px;
+font-size: 12px;
+font-weight:600 ;
 }
 .get-qoutes{
     display: flex;

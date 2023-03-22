@@ -42,7 +42,7 @@ else{
                 <i class="bi bi-caret-down-fill"></i>
                 </div>
                 <Fade top>
-                <div className="ANIMATION" style={{backgroundColor:'white',display: 'none'}}> {element?.answer}</div>
+                <div className="ANIMATION" style={{backgroundColor:'white',display: 'none',width:'100%'}}> {element?.answer}</div>
                 </Fade>
                
                </div>

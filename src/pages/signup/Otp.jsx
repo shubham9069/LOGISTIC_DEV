@@ -36,7 +36,7 @@ const checkotp=async(e)=>{
            
            if(response.status===200){
             const data = response.data;
-            Toast(data.msg,response.status);
+            Toast(data.message,response.status);
             
             if(data?.Customer?.is_active==0){
               navigate('/signup' ,{state:{mobile}})
@@ -73,7 +73,7 @@ const checkotp=async(e)=>{
            
            if(response.status===200){
             const data = response.data
-            Toast(data.msg,response.status)
+            Toast(data.message,response.status)
            }
          }
          catch(err){
@@ -142,7 +142,7 @@ const checkotp=async(e)=>{
       <p className='lighptgrey-p' style={{marginTop:'2rem',marginBottom:'0' }}>If you do not reveive the T-PIN in the next 5 seconds, you will automatically
 receive a IVR call to convey the PIN.</p>
   <button  className="btn btn-primary form-btn" style={{marginTop:'2rem'}} onClick={checkotp}>procced</button>
- <p className="signup-span center-div" onClick={resendotp} >Resend Otp</p>
+ <p className="signup-span center-div" onClick={resendotp} style={{cursor:"pointer"}} >Resend Otp</p>
 </form>
 
    

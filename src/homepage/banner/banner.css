@@ -1,5 +1,5 @@
 .banner{
-    height:70vh;
+    height:400px;
     display: flex;
     align-items: center;
     position: relative;
@@ -20,7 +20,7 @@
 
 .banner:after{
     content:"";
-    background: rgba(33, 127, 237, 0.45);
+    background: rgba(33, 128, 237, 0.278);
     position: absolute;
     left: 0;top:0;
     right: 0;
@@ -45,7 +45,7 @@ font-size: 18px;
 line-height: 149.02%;
 }
 .banner-content>p>span{
-    color: #FDE958;
+    color: white;
    
      font-weight: 500;
 font-size: 22px;

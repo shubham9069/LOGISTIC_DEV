@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom'
 const Logout =  () => {
    const navigate =useNavigate()
    const [isLoading,setIsLoading] = useState(true)
-   const {userData,userToken,setUserData,setUserToken,setCart} = useContext(AuthContext)
+   const {userData,userToken,setUserData,setUserToken,setCart,setEnquiry_id} = useContext(AuthContext)
 
   
 
@@ -33,6 +33,7 @@ const Logout =  () => {
           window.localStorage.clear();
           setUserData("")
           setUserToken("")
+          setEnquiry_id("")
           // setCart([])
           
           navigate('/')
