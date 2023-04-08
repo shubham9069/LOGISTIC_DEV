@@ -76,7 +76,7 @@ const getstar =(rating) => {
     </div>
 
     <Question QuesArr={citydata?.faq}/>
-      <FlatRent  title={"Flat For Rent"}/>
+      <FlatRent  title={"Packer And Movers"}/>
     </>
     :null}
     </>

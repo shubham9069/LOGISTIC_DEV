@@ -62,7 +62,7 @@ const FlatRent = ({title}) => {
 
 <div className="section-padding flat-rent">
 <div className="flat-rent-a">
-    <a >{title}</a>
+    <a >Packers & Movers</a>
     
 </div>
 
@@ -74,7 +74,7 @@ const FlatRent = ({title}) => {
 {city?.map((element) =>{
 
   return <>
-  <Link to={'/Flat/'+element?.id} style={{}} >{title} In  {element?.name} </Link>
+  <Link to={'/Flat/'+element?.id} style={{}} >Packers & Movers In {element?.name} </Link>
     
   </>
 })}

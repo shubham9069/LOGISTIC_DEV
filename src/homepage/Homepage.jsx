@@ -24,7 +24,7 @@ const Homepage = () => {
   
     <Contact/>
     
-    <FlatRent title={"Flat for Rent"}/>
+    <FlatRent title={"Packer And Movers"}/>
     
     </>
   )

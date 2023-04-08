@@ -39,31 +39,15 @@ color: #5d5d5d;
 }
 
 .get-qoutes{
-      /* ff 3.6+ */
-      background:-moz-linear-gradient(90deg, rgba(59, 103, 153, 1) 0%, rgba(234, 244, 251, 1) 100%); 
-
-      /* safari 5.1+,chrome 10+ */
-      background:-webkit-linear-gradient(90deg, rgba(59, 103, 153, 1) 0%, rgba(234, 244, 251, 1) 100%);
-  
-      /* opera 11.10+ */
-      background:-o-linear-gradient(90deg, rgba(59, 103, 153, 1) 0%, rgba(234, 244, 251, 1) 100%);
-  
-      /* ie 6-9 */
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#EAF4FB', endColorstr='#3B6799', GradientType=0 );
-  
-      /* ie 10+ */
-      background:-ms-linear-gradient(90deg, rgba(59, 103, 153, 1) 0%, rgba(234, 244, 251, 1) 100%);
-  
-      /* global 94%+ browsers support */
-      background:linear-gradient(90deg, rgba(59, 103, 153, 1) 0%, rgba(234, 244, 251, 1) 100%);
+      background-color: #e7f3fb;
     height: 130px;
     width:100%
 }
 
 .quote-btn{
     padding: 12px 26px;
-background: #eaf4fb;
-color:black !important;
+background: #088FD8;
+color:white !important;
 text-decoration: none;
 border-radius: 11px;
 font-size: 12px;

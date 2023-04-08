@@ -112,21 +112,21 @@ useEffect(()=>{
     <Fade top>
     <div className="rooms-heading ">
         <h3>What are the major items you want to move?</h3>
-        <p>Lorem ipsum dolor sit amet consectetur. Accumsan pharetra ac ullamcorper congue aliquam vel. Feugiat sagittis mattis lacus nibh. Nec sem fringilla euismod adipiscing a. Nunc.</p>
+        <p>Please provide the item details like brand, quantity, size etc for better calculation of the price</p>
     </div>
     </Fade>
 
     <div className="rooms-box center-div">
     {roomsdata?.rooms?.map((element, index) =>{
       
-        return  <Link to={'/selectitem/'+element.id}  className="rooms-card1 center-div">
+        return  <Link to={'/selectitem/'+element.id} state={element}  className="rooms-card1 center-div">
     <img src={element?.image}></img>
     <p>{element?.name}</p>
     </Link>
     })}
     {roomsdata?.bedrooms?.map((element, index) =>{
       
-        return  <Link to={'/selectitem/'+element.id} className="rooms-card1 center-div">
+        return  <Link to={'/selectitem/'+element.id}  state={element} className="rooms-card1 center-div">
     <img src={element?.image}></img>
     <p>{element?.name}</p>
     </Link>

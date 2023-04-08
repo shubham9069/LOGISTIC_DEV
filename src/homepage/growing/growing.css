@@ -9,22 +9,21 @@ border-radius: 9px;
 
 }
 
-.growing-tile-heading{
-    font-weight: 500;
-font-size: 36px;
-line-height: 136.19%;
-/* identical to box height, or 49px */
 
-text-align: center;
-
-color: #D2584D;
-}
 
 .growing-tile-heading{
+  text-align: center;
+  color: #D2584D;
     font-style: normal;
 font-weight: 400;
 font-size: 24px;
 line-height: 136.19%;
+
+}
+.growing-tile-heading + span{
+  display: block;
+    text-align: center;
+    width: 100%;
 }
 
 .swiper {

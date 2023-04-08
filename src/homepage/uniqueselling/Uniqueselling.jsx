@@ -180,7 +180,7 @@ const Uniqueselling = () => {
 
            <div class="col-sm-12 col-lg-6">
                 <p class="section-subheading">OUR UNIQUE SELLING PROPOSITION</p>
-                <h2 class="section-heading ">Your Busniess Success Built On A Powerful Customer Experience Platform</h2>
+                <h2 class="section-heading ">Your Business Success Built On A Powerful Customer Experience Platform</h2>
                 <img src={rectangle} alt="" class="img-fluid"/>
            </div>
         </div>

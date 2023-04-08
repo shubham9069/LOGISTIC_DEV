@@ -20,20 +20,32 @@ const Growing = () => {
         <div className="row py-5 justify-content-center" style={{gridGap:'25px'}}>
            <div className="col-lg-4 col-sm-12 center-div growing-box" >
                <div className="growing-tiles">
-                   <h5 className="growing-tile-heading">1300</h5>
-                   <span>User Order Online</span>
+                   <h5 className="growing-tile-heading">25 (Branches Pan India)</h5>
+                   <span >Number of location </span>
                </div>
            </div>
            <div className="col-lg-4 col-sm-12 center-div growing-box" style={{background: 'rgba(190, 226, 245, 0.47)'}} >
                <div className="growing-tiles" >
                    <h5 className="growing-tile-heading">1500</h5>
-                   <span>Client &amp; Event More On The Way</span>
+                   <span >Number of cities</span>
                </div>
            </div>
            <div className="col-lg-4 col-sm-12 center-div growing-box" >
                <div className="growing-tiles">
-                   <h5 className="growing-tile-heading">350</h5>
-                   <span>Partners are worldwide</span>
+                   <h5 className="growing-tile-heading">25000</h5>
+                   <span>Move annually</span>
+               </div>
+           </div>
+           <div className="col-lg-4 col-sm-12 center-div growing-box" >
+               <div className="growing-tiles">
+                   <h5 className="growing-tile-heading">150</h5>
+                   <span> Vehicle</span>
+               </div>
+           </div>
+           <div className="col-lg-4 col-sm-12 center-div growing-box" >
+               <div className="growing-tiles">
+                   <h5 className="growing-tile-heading">1500</h5>
+                   <span>Manpower </span>
                </div>
            </div>
         </div>
@@ -42,7 +54,7 @@ const Growing = () => {
    <div className="py-5 padding4rem">
         <div className="container">
             <p className="section-subheading">Accreditation &amp; Associations</p>
-            <h2 className="section-heading">Lorem ipsum dolor sit amet consectetur. In luctus ut donec.</h2>
+            <h2 className="section-heading">Brands we have served for</h2>
         </div>
 
     </div>

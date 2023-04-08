@@ -3,7 +3,7 @@ import './selectitem.css'
 import { furniture,kitchen,sofa } from '../assest/Exportimage'
 import Toast from '../../Toast'
 import axios from '../../axios'
-import { useNavigate,Link, useParams, Navigate } from 'react-router-dom'
+import { useNavigate,Link, useParams, Navigate,useLocation } from 'react-router-dom'
 import { AuthContext } from '../../AuthProvider'
 import Fade from 'react-reveal/Fade';
 import Modal from 'react-bootstrap/Modal';
@@ -13,8 +13,12 @@ import Loader from '../../Loader'
 
 
 
+
 const SelectItem = () => {
     const navigate = useNavigate()
+    const location= useLocation()
+    const roomData = location?.state
+    
     const {userToken,enquiry_id} = useContext(AuthContext)
     const [product,setproduct] =useState([])
     const [productAtt,setproductAtt] =useState([])
@@ -27,7 +31,7 @@ const SelectItem = () => {
     const [quantity,setQuantity] = useState("")
 
     const room_id = useParams().room_id
-    console.log(room_id)
+   
  
         
 
@@ -203,15 +207,16 @@ const SelectItem = () => {
     <Fade top>
         <div className="selectitem-heading ">
         <h3>What are the major items you want to move?</h3>
-        <p>Lorem ipsum dolor sit amet consectetur. Accumsan pharetra ac ullamcorper congue aliquam vel. Feugiat sagittis mattis lacus nibh. Nec sem fringilla euismod adipiscing a. Nunc.</p>
+        <p>Please provide the item details like brand, quantity, size etc for better calculation of the price</p>
     </div>
     </Fade>
     
     
     <div className="selectitem-box center-div">
     <div className="selectitem-card1">
-    <div className="selectitem-card-img1 center-div">
-        <p>furniture</p>
+    <div className="selectitem-card-img1 center-div" style={{}}>
+    <img src={roomData?.image}></img>
+        <p>{roomData?.name}</p>
     </div>
     {product?.map((element)=>{
       
@@ -226,36 +231,7 @@ const SelectItem = () => {
     })}
     
     </div>
-    {/* <div className="selectitem-card1">
-    <div className="selectitem-card-img2 center-div">
-        <p>furniture</p>
-    </div>
-    {roomsAtt?.map((element)=>{
-        return <div className='selectitem-card-content '>
-        <div className='center-div'>
-        <img src={sofa}/>
-        <p style={{margin:'0'}}>bed</p>
-        </div>
-        <input type="radio" id="huey" name="drone" value="huey" ></input>
-    </div>
-    })}
-    
-    </div>
-    <div className="selectitem-card1">
-    <div className="selectitem-card-img3 center-div">
-        <p>furniture</p>
-    </div>
-    {roomsAtt?.map((element)=>{
-        return <div className='selectitem-card-content '>
-        <div className='center-div'>
-        <img src={sofa}/>
-        <p style={{margin:'0'}}>bed</p>
-        </div>
-        <input type="radio" id="huey" name="drone" value="huey" ></input>
-    </div>
-    })}
-    
-    </div> */}
+   
 
     </div>
 

@@ -15,6 +15,18 @@ console.log(banner)
     </div>
 
     </div>
+    <div className=" get-qoutes section-padding" style={{marginTop:'2rem'}}>
+
+        
+          
+                
+                <h2 className="">Need a Free Moving <span className="highlight">Estimate?</span></h2>
+           
+
+                
+                <a href="#" className="get-quote-btn text-uppercase quote-btn border-0">GET QUOTE FREE</a>
+            
+</div>
     </>
   )
 }

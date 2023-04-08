@@ -72,8 +72,7 @@ draggable
 pauseOnHover
 theme="light"
 />
-{/* Same as */}
-<ToastContainer />
+
     </>
     
   )

@@ -21,10 +21,10 @@ const About = () => {
             <div className="col-sm-12 col-lg-6 about-right">
                  <div className="row ">
                     <div className="col-12 d-flex justify-content-center align-items-center ">
-                        <Link to='/GetEstimate1' className="link-a about-tile my-3" >
+                        <Link to='/Aboutus' className="link-a about-tile my-3" >
                             <div className='d-flex justify-content-center align-items-center flex-column about-img'>
-                            <i class="bi bi-calendar-check-fill" style={{fontSize:'2rem'}}></i>
-                                <p >Free Estimate</p>
+                            <i class="bi bi-box-seam-fill" style={{fontSize:'2rem'}}></i>
+                                <p >Damage Recover</p>
                             </div>
                             
                         </Link>
@@ -33,7 +33,7 @@ const About = () => {
                         <Link to='/help' className="link-a about-tile my-3">
                             <div className='d-flex justify-content-center align-items-center flex-column about-img'>
                             <i class="bi bi-clock-fill" style={{fontSize:'2rem'}}></i>
-                                <p>24/7 Services</p>
+                                <p>Physical Schedule </p>
                             </div>
                            
                         </Link>
@@ -42,7 +42,7 @@ const About = () => {
                         <Link to='/' className="link-a about-tile my-3" >
                             <div className='d-flex justify-content-center align-items-center flex-column about-img'>
                             <i class="bi bi-box-seam-fill" style={{fontSize:'2rem'}}></i>
-                                <p>Damage Recover</p>
+                                <p>Whatapp Survey</p>
                             </div>
                         </Link>
                     </div>
