@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import './contact_form.css'
 import Form from 'react-bootstrap/Form';
 import { packermover,warehouse,smiley,people,move } from '../assest/exportfiles';
@@ -59,6 +59,44 @@ const Contact_Form = ({Title,img}) => {
       setIsLoading(false)
      }
   }
+
+  const number =(e)=>{
+    console.log(e)
+const myNum = document.querySelectorAll('.gowingName')
+// console.log(myNum.innerText)
+let speed = 150;
+
+myNum.forEach( (myCount) => {
+    
+    
+    let target_count = myCount.dataset.count;
+    let init_count = +myCount.innerText;
+    // console.log(target_count)
+    
+    let newSpeed = Math.ceil(target_count / speed)
+    
+    const updateNumber = () => {
+        init_count +=  newSpeed;
+        myCount.innerText = init_count;
+        
+        if(init_count < target_count){
+            setTimeout(() => {updateNumber()}, 30)
+        }else {
+          myCount.innerText=myCount.innerText+"+"
+      }
+        
+    }
+    
+    updateNumber();
+})
+  
+}
+
+
+useEffect(()=>{
+ number();
+
+},[])
   return (
     <>
     {isLoading &&(<Loader />)}
@@ -99,22 +137,22 @@ const Contact_Form = ({Title,img}) => {
        <div className="icon-info section-padding" style={{margin:'2rem 0'}}>
     <div>
       <img src={move} />
-      <p>1,00,000 +</p>
+      <p className='gowingName'  data-count="50000">0</p>
       <p>House Movers</p>
     </div>
     <div>
       <img src={smiley} />
-      <p>1,00,000 +</p>
+      <p className='gowingName'  data-count="10000">0</p>
       <p>Happy Customers</p>
     </div>
     <div>
       <img src={people} />
-      <p>1000 +</p>
+      <p className='gowingName'  data-count="500">0</p>
       <p>Corporate Client </p>
     </div>
     <div>
       <img src={warehouse} />
-      <p>160</p>
+      <p className='gowingName'  data-count="160">0</p>
       <p>Warehouse</p>
     </div>
        </div>            

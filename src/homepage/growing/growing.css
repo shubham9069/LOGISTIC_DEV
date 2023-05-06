@@ -69,3 +69,29 @@ line-height: 136.19%;
   .padding4rem{
     padding: 2rem 0!important;
   }
+
+  .growing-container{
+    padding: 2rem;
+    display: grid;
+    grid-gap:20px;
+    justify-content: space-evenly;
+    align-items: center;
+    background:black;
+    grid-template-columns: repeat(4,1fr);
+    
+  }
+  .growing-container>div{
+    /* flex:0 1 100px */
+  }
+  .growing-container>div>*{
+    color:white;
+    text-align: center
+  }
+
+  @media screen and (max-width:800px) {
+    .growing-container{
+   
+      grid-template-columns: repeat(2,1fr);
+      
+    }
+  }

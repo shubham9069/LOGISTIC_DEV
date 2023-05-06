@@ -9,6 +9,8 @@ import Question from '../servicepage/question/Question'
 const Faq = () => {
   const [faq,setfaq] = useState([])
   const [isLoading,setLoading] = useState(true)
+  
+  document.title="Faq"
     
     const getfaq =async () =>{
 

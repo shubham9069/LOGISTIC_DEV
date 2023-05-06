@@ -23,8 +23,8 @@ const Services = () => {
                        <img src={train} alt="swws" className="img-fluid"/>
                        
                     </div>
-                   <p className="service-tile-heading">International</p>
-                   <p className="service-tile-text"> 25+ Branches Pan India We move source to destination very effcient time period with very without any damage </p>
+                   <p className="service-tile-heading">International Relocation</p>
+                   <p className="service-tile-text"> 32+ Branches Pan India We move source to destination very effcient time period with very without any damage </p>
                 </div>
             </div>
             <div className="" >
@@ -33,7 +33,7 @@ const Services = () => {
                        <img src={delivery} alt="" className="img-fluid"/>
                        
                     </div>
-                   <p className="service-tile-heading">Domestic</p>
+                   <p className="service-tile-heading">Domestic Relocation</p>
                    <p className="service-tile-text">We are well equipped with our team of professional staff that use best equipments for packing, loading, unloading materials.</p>
                 </div>
             </div>
@@ -43,7 +43,7 @@ const Services = () => {
                        <img src={exchange} alt="" className="img-fluid"/>
                        
                     </div>
-                   <p className="service-tile-heading">Vehicle relocation</p>
+                   <p className="service-tile-heading">Vehicle Relocation</p>
                    <p className="service-tile-text">Our Professional and highly trained team members will makes your shifting very smooth and without any damage. </p>
                 </div>
             </div>
@@ -54,7 +54,7 @@ const Services = () => {
                        <img src={briefcase} alt="" className="img-fluid"/>
                        
                     </div>
-                   <p className="service-tile-heading">Office relocation</p>
+                   <p className="service-tile-heading">Office Relocation</p>
                    <p className="service-tile-text">We move source to destination very effcient time period with very without any damage.enjoy our service</p>
                 </div>
             </div>
@@ -64,7 +64,7 @@ const Services = () => {
                        <img src={warehouse} alt="" className="img-fluid"/>
                        
                     </div>
-                   <p className="service-tile-heading">Corporate relocation</p>
+                   <p className="service-tile-heading">Corporate Relocation</p>
                    <p className="service-tile-text">We are well equipped with our team of professional staff that use best equipments for packing, loading, unloading materials.</p>
                 </div>
             </div>

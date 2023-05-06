@@ -50,6 +50,7 @@ const AboutUs = () => {
 
   useEffect(() => {
     AboutUs()
+    document.title="About-us"
 
   },[])
   return (

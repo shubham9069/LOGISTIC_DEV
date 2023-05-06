@@ -10,13 +10,13 @@ const Help = () => {
   <div className="container center-div flex-column ">
   <h3>Help & Support</h3>
   
-  <img src={Group9} style={{maxWidth:'350px'}}></img>
+  <img src='images/digital-card.png' style={{height:'100vh'}}></img>
   
   </div>
   <div className="section-padding center-div flex-column" style={{ maxWidth:'1500px',gridGap:'40px' ,margin:'0 auto'}}>
               <div className="help" >
                  <div>
-                  <p > Call us<br/><span style={{fontWeight: 400,color: '#807A7A'}}>+31 9868999004</span> </p>
+                  <p > Call us<br/><span style={{fontWeight: 400,color: '#807A7A'}}>+91 99-166-93-666</span> </p>
   
   {/* ===================svg================                 */}
   
@@ -39,7 +39,7 @@ const Help = () => {
   
               <div className="help" >
                  <div>
-                  <p > Mail Us<br/><span style={{fontWeight: 400,color: '#807A7A'}}>Support@artgallery.com</span> </p>
+                  <p > Mail Us<br/><span style={{fontWeight: 400,color: '#807A7A'}}>info@budgetlogistic.com</span> </p>
   
   {/* ===================svg================                 */}
   

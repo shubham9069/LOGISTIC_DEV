@@ -28,10 +28,12 @@ const SelectItem = () => {
     const [show, setShow] = useState(false);
     const [data, setdata] = useState();
     const [spy,setSpy] = useState(false)
-    const [quantity,setQuantity] = useState("")
+    const [quantity,setQuantity] = useState(1)
+    const [slice,setsliceArr] = useState([])
 
     const room_id = useParams().room_id
    
+    const item  = 7
  
         
 
@@ -46,21 +48,26 @@ const SelectItem = () => {
         setdata({...data,[name]:value})
     }
 
-    const filter_product=(product_id)=>{
+    const filter_product=(product_id,name)=>{
         const arr = product?.filter((element)=>{
-            
             return element.id==product_id
         })
         setproductAtt(...arr)
+        setQuantity(1)
+        enquiry_data?.products[name]?.forEach((element,index)=>{
+          console.log(element)
+          if(element?.attribute_name == 'quantity'){
+            setQuantity(Number(element?.attribute_value) )
+          }
+        })
+        
         setShow(true)
+        
       
         
     }
     const show_data=(attribute,input_name)=>{
   
-      
-     
-      // console.log(enquiry_data?.products[productAtt?.name])
       
       
       var array = enquiry_data?.products[productAtt?.name]?.some((element,index)=>{
@@ -68,9 +75,10 @@ const SelectItem = () => {
         return element.attribute_value==attribute && element?.attribute_name== input_name
       })
       return array
-      
-      // return (first?.attribute_value)
+     
     } 
+
+
    
 
     const getroom_attr =async()=>{
@@ -88,12 +96,25 @@ const SelectItem = () => {
               const data = response.data;
               setproduct(data?.products);
               Toast(data.message,response.status)
-              
+             
+                let total = data?.products.length
+                let no_of_box = Math.ceil(total/item)
+                var arr = []
+                var last_value=0;
+                for(var i=1; i<=no_of_box; i++){
+                  
+                  arr.push({"startIndex":last_value,"lastIndex":i*item})
+
+                  last_value=i*item
+                }
+                setsliceArr(arr)
               
              }
+             
+             
            }
            catch(err){
-            const error = err.response.data
+            const error = err.response?.data
             Toast(error.message);
             
          
@@ -164,7 +185,7 @@ const SelectItem = () => {
         //      return Toast("plx fill attributres ")
         // } 
         
-         const obj={...data,enquiry_id,product_id:productAtt?.id,room_id,quantity:quantity || '1'}
+         const obj={...data,enquiry_id,product_id:productAtt?.id,room_id,quantity:quantity }
         try{
             setIsLoading(true)
             const response= await axios({
@@ -206,32 +227,36 @@ const SelectItem = () => {
     <div className="container">
     <Fade top>
         <div className="selectitem-heading ">
-        <h3>What are the major items you want to move?</h3>
-        <p>Please provide the item details like brand, quantity, size etc for better calculation of the price</p>
+        <h3>{roomData?.name}</h3>
+        
     </div>
     </Fade>
     
     
-    <div className="selectitem-box center-div">
-    <div className="selectitem-card1">
-    <div className="selectitem-card-img1 center-div" style={{}}>
-    <img src={roomData?.image}></img>
-        <p>{roomData?.name}</p>
-    </div>
-    {product?.map((element)=>{
+    <div className="selectitem-box ">
+
+    {slice?.map((Att)=>{
+       
+      return  <div className="selectitem-card1">
+
+{product?.slice(Att?.startIndex,Att?.lastIndex)?.map((element)=>{
       
-        return <div className='selectitem-card-content ' onClick={()=>filter_product(element.id,element?.name)}>
-        <div className='d-flex justify-content-between align-items-center'>
-        <img src={element?.icon} style={{width:30,height:30}}/>
-        <p style={{margin:'0',flex:2}}>{element?.name || "hjvvh"}</p>
-        {enquiry_data?.hasOwnProperty("products") ? enquiry_data?.products[element?.name]?.length != 0 &&(<i class="bi bi-check-circle-fill"></i>):null}
-        </div>
-        {/* <input type="radio" id="huey" name="drone" checked={enquiry_data?.products true:false} ></input> */}
+    return <div className='selectitem-card-content ' onClick={()=>filter_product(element.id,element?.name)}>
+    <div className='d-flex justify-content-between align-items-center'>
+    <img src={element?.icon} style={{width:30,height:30}}/>
+    <p style={{margin:'0',flex:2}}>{element?.name || "hjvvh"}</p>
+    {enquiry_data?.hasOwnProperty("products") ? enquiry_data?.products[element?.name]?.length != 0 &&(<i class="bi bi-check-circle-fill"></i>):null}
     </div>
+    {/* <input type="radio" id="huey" name="drone" checked={enquiry_data?.products true:false} ></input> */}
+</div>
+})}
+
+</div>
+
+
     })}
-    
-    </div>
-   
+
+  
 
     </div>
 
@@ -281,9 +306,11 @@ const SelectItem = () => {
       </Form.Group>
         })}
 
-        <Form.Group className="mb-3 d-flex " controlId="formBasicPassword" style={{gridGap:'20px',}}>
+        <Form.Group className="mb-3 d-flex " controlId="formBasicPassword" style={{gridGap:'10px',}}>
         <Form.Label style={{}} >Quantity</Form.Label>
-        <input type="number" className="getestimate-input" placeholder='Quantity' style={{minWidth: '230px'}} value={quantity} onChange={e=>setQuantity(e.target.value)} />
+        <button className='btn-dark btn' onClick={()=>setQuantity(quantity==1 ? 1:quantity-1)} >-</button>
+        <input type="number" className="getestimate-input" style={{width:70,textAlign:'center'}} value={ quantity} onChange={e=>setQuantity(e.target.value)} />
+        <button  className='btn-dark btn' onClick={()=>setQuantity(quantity+1)} >+</button>
         </Form.Group> 
       </Modal.Body>
         <Modal.Footer>

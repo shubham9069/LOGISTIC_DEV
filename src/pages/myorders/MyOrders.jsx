@@ -16,7 +16,7 @@ const MyOrders = () => {
   const {userToken}= useContext(AuthContext)
   const [isLoading,setIsLoading] = useState(true)
     const [show,setshow] = useState(false)
-    const [Modaldata,setModaldata] = useState({})
+    const [Modaldata, setModaldata] = useState({})
     const [Allorders,setAllorders] = useState([])
     const [review,setReview] = useState(false)
     const [reviewData,setReviewData] = useState('');
@@ -204,13 +204,14 @@ const update_review = async(e)=>{
     </div>
     <div className="myorder-box-middle">
     <div style={{flex:0.75}}>
-    <h6>Move planner</h6>
-        <p>{element?.move_planner ==null?"waiting for allocation " :element?.planner_name }<br/><span>+91 1245785214</span></p>
+    <h6>Move Planner</h6>
+        <p style={{marginBottom:0}}>{element?.move_planner ==null?"waiting for allocation " :element?.move_planner?.name}</p>
+        <p>{element?.move_planner ==null?"waiting for allocation " :element?.move_planner?.mobile}</p>
     </div>
-    <div style={{flex:1}}>
+    {/* <div style={{flex:1}}>
     <h6>Move Manager</h6>
     <p>{element?.move_manager ==null?"waiting for allocation " :element?.move_manager }</p>
-    </div>
+    </div> */}
 
     </div>
     <div className="myorder-box-lower">
@@ -221,6 +222,7 @@ const update_review = async(e)=>{
         {element?.status==3&&(<p style={{color:'green'}}>Approved</p>)}
         {element?.status==4&&(<p style={{color:'red'}}> Rejected</p>)}
         {element?.status==5&&(<p style={{color:'green'}}> Completed  <img src='images/check.gif' style={{width:'20px'}}></img> </p>)}
+        <p style={{}}>#Track id : {element?.tracking_id == null ? "In Process " : element?.tracking_id}</p>
     </div>
     <div >
     <button type="button" className='viewdetails' onClick={()=>{setModaldata(element);setshow(true)}}>View Details </button>
@@ -286,17 +288,17 @@ const update_review = async(e)=>{
   <p style={{margin:"1rem 0 " ,fontSize:"14px",background:"#e7f3fb",padding:" 0.3rem 0.5rem"}}>{element?.name}</p>
   <div className='itemlist-container'>
     
-    {Object.keys(element?.products)?.map((key)=>{
-        if(element?.products[key]?.length)
+    {Object.keys(element?.data)?.map((key)=>{
+        if(element?.data[key]?.attributes?.length)
         {
         return  <div className='item-list-box '>
               <div>
-        <img src={sofa} style={{width:25,height:25}} />
+        <img src={element?.data[key]?.product_image} style={{width:25,height:25}} />
        </div>
        <div>
         <p style={{margin:'3px',fontSize:'13px',fontWeight:'600'}}>{key}</p>
         <div style={{display: 'flex',gridGap:'10px',flexWrap:"wrap"}}>
-        {element?.products[key]?.map((att)=>{
+        {element?.data[key]?.attributes?.map((att)=>{
 
 
             return <p style={{fontSize:'10px',fontWeight:'600',color:'#545454',margin:'0'}} ><span style={{fontSize:'10px',fontWeight:'600',color:'#545454'}}>{att?.attribute_name}</span> : <span style={{fontSize:'10px',fontWeight:'500',color:'#545454'}}>  {att?.attribute_value}</span></p>

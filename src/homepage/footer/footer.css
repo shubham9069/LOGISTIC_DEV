@@ -91,13 +91,16 @@ line-height: 19px
     grid-template-columns: repeat(4, 25%);
     margin-bottom: 1.2rem;
     place-items: center center;
-    justify-content: center;
+    justify-content: space-between;
+    
+    margin: 0 auto;
+    padding: 0 2rem
 }
 .packer-and-mover>a{
     
     cursor:'pointer';
     width:100%;
-    text-align: center;
+    text-align: left;
     font-weight: 400;
 font-size: 14px;
 line-height: 19px;

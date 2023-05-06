@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import './banner.css'
 import  bgImg from "../assest//Rectangle\ 3875.png"
+import { Link } from 'react-router-dom'
 
 const Banner = ({title,banner}) => {
 
@@ -24,7 +25,7 @@ console.log(banner)
            
 
                 
-                <a href="#" className="get-quote-btn text-uppercase quote-btn border-0">GET QUOTE FREE</a>
+                <Link to='/getestimate1' className="get-quote-btn text-uppercase quote-btn border-0">GET QUOTE FREE</Link>
             
 </div>
     </>

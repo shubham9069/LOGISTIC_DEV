@@ -21,19 +21,19 @@ const About = () => {
             <div className="col-sm-12 col-lg-6 about-right">
                  <div className="row ">
                     <div className="col-12 d-flex justify-content-center align-items-center ">
-                        <Link to='/Aboutus' className="link-a about-tile my-3" >
+                        <a className="link-a about-tile my-3" >
                             <div className='d-flex justify-content-center align-items-center flex-column about-img'>
-                            <i class="bi bi-box-seam-fill" style={{fontSize:'2rem'}}></i>
-                                <p >Damage Recover</p>
+                            <i class="bi bi-clock-fill" style={{fontSize:'2rem'}}></i>
+                                <p style={{textAlign:'center'}}>Schedule<br/> Physical Survey</p>
                             </div>
                             
-                        </Link>
+                        </a>
                     </div>
                     <div className="col-6 d-flex justify-content-center align-items-center">
                         <Link to='/help' className="link-a about-tile my-3">
                             <div className='d-flex justify-content-center align-items-center flex-column about-img'>
-                            <i class="bi bi-clock-fill" style={{fontSize:'2rem'}}></i>
-                                <p>Physical Schedule </p>
+                            <i class="bi bi-whatsapp" style={{fontSize:'2rem'}}></i>
+                            <p style={{textAlign:'center'}}>Schedule<br/> WhatsApp Survey</p>
                             </div>
                            
                         </Link>
@@ -42,7 +42,7 @@ const About = () => {
                         <Link to='/' className="link-a about-tile my-3" >
                             <div className='d-flex justify-content-center align-items-center flex-column about-img'>
                             <i class="bi bi-box-seam-fill" style={{fontSize:'2rem'}}></i>
-                                <p>Whatapp Survey</p>
+                            <p style={{textAlign:'center'}}>Damage<br/>  Recover</p>
                             </div>
                         </Link>
                     </div>

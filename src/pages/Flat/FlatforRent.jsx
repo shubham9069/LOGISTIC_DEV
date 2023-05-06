@@ -7,12 +7,14 @@ import { Banner, FlatRent } from '../../homepage/Exportfile'
 import Contact_Form from '../servicepage/contact-form/Contact_Form'
 import Question from '../servicepage/question/Question'
 import './FlatforRent.css'
+import Loader from '../../Loader'
+import { Helmet } from 'react-helmet'
 
 
-const FlatforRent = () => {
+const FlatforRent = ({id}) => {
   const [citydata,setcityData] = useState([])
   const [isLoading,setIsLoading] = useState(false)
-  const {id} = useParams()
+  
   const pathname = useLocation()
   
 
@@ -68,6 +70,12 @@ const getstar =(rating) => {
 
   return (
     <>
+     <Helmet>
+                
+                <title>{`packer-and-movers-in-${id}`}</title>
+                
+    <meta name="keywords" content={`packers and movers in ${id}, best packers and movers in ${id}, packers and movers near me, packers and movers, movers and packers  `}></meta>
+            </Helmet>
     {!isLoading?
     <>
   <Banner  title={citydata?.banner_title} banner={citydata?.banner}/>
@@ -78,7 +86,7 @@ const getstar =(rating) => {
     <Question QuesArr={citydata?.faq}/>
       <FlatRent  title={"Packer And Movers"}/>
     </>
-    :null}
+    :<Loader />}
     </>
   )
 }

@@ -1,0 +1,60 @@
+
+.tracking{
+   
+}
+.tracking>div{
+    display:flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: row;
+   flex: 1 0 200px;
+    position: relative;
+    grid-gap:10px
+    
+}
+.tracking-line{
+    
+    width: 5px;
+    height: 100px;
+    background-color:#088fd8ba;
+    margin: 0 auto;
+}
+
+.tracking>div>p{
+    font-size: 10px;
+    text-align: center;
+}
+
+
+.shippinginfo>div>p{
+    font-size: 14px;
+
+}
+.shippinginfo>div>p:nth-child(1){
+    font-weight: 600;
+
+}
+.shippinginfo>div>p:nth-child(2){
+    color:grey;
+    /* font-weight: 700; */
+
+}
+.shippinginfo>div span{
+    
+    font-weight: 600;
+    color:rgb(83, 83, 83);
+
+}
+.shippinginfo{
+    flex:0 1 400px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+.shipcontainer{
+    justify-content: center;
+    align-items: stretch;
+  
+    margin: 2rem auto;
+    flex-wrap: wrap;
+    
+}

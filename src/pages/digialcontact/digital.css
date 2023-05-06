@@ -1,0 +1,49 @@
+
+.globle-contact{
+    height: 100dvh;
+    width: 100%;
+    /* background-color:#fefff5; */
+   
+    position: relative;
+  z-index: -2;
+    
+}
+.globle-contact::before{
+    content: " ";
+    height: inherit;
+    width: inherit;
+    position: absolute;
+    z-index:-1 ;
+    top:-100px;
+    left:0;
+   
+    background: url('/public//images//globle.png') no-repeat center;
+    background-size: cover;
+    
+    
+    
+}
+
+.globle-table{
+    width: 100%;
+}
+.globle-table>table{
+    width: 100%;
+    max-width:1000px;
+    margin:0 auto;
+    text-align: center;
+ 
+}
+.globle-table th{
+   
+  padding:10px;
+  font-size: 20px;
+  font-weight: 600;
+  color:#55b4e8;
+ 
+}
+.globle-table td{
+  padding:5px 10px;
+ 
+ 
+}

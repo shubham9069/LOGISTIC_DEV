@@ -3,6 +3,7 @@ import React, { useState,useContext,useEffect } from 'react'
 import { AuthContext } from '../../AuthProvider'
 import axios from '../../axios'
 import { Link } from 'react-router-dom'
+import Loader from '../../Loader'
 
 
 
@@ -74,7 +75,7 @@ const FlatRent = ({title}) => {
 {city?.map((element) =>{
 
   return <>
-  <Link to={'/Flat/'+element?.id} style={{}} >Packers & Movers In {element?.name} </Link>
+  <Link to={'/packer-and-movers-in-'+element?.slug} style={{}} >Packers & Movers In {element?.name} </Link>
     
   </>
 })}

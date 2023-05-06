@@ -11,6 +11,8 @@ import { packermover,relocation } from './assest/exportfiles'
 import { useParams } from 'react-router-dom'
 import { AuthContext } from '../../AuthProvider'
 import Loader from '../../Loader'
+import { Helmet } from 'react-helmet'
+
 
 
 
@@ -22,8 +24,9 @@ const Service1 = ({title}) => {
  
   const [serviceData,setServiceData] = useState([])
   const {service_id} = useParams()
-
-
+  
+    const keyword = service_id.split('-')
+    
 
   
 
@@ -91,7 +94,7 @@ const Service1 = ({title}) => {
           }
          catch(err){
           const error = err.response.data
-          Toast(error.message);
+          // Toast(error.message);
           
        
        
@@ -112,10 +115,18 @@ const Service1 = ({title}) => {
 
   },[])
 
+
   
   return (
     <>
+     <Helmet>
+                
+                <title>{service_id}</title>
+                
+    <meta name="keywords" content={`${keyword[0]} relocation, best ${keyword[0] } relocation, ${keyword[0]} relocation near me, ${keyword[0]} relocation in gurugram, ${keyword[0]} relocation bangalore, ${keyword[0]} relocation hyderabad`}></meta>
+            </Helmet>
     {isLoading &&(<Loader/>)}
+
         <Contact_Form Title={serviceData?.banner_title} img={serviceData?.banner} />
 
         <DomesticReloaction title={serviceData?.second_block?.heading} img={serviceData?.second_block?.image} text={serviceData?.second_block?.text}/>

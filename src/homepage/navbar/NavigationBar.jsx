@@ -1,7 +1,7 @@
 import React, { useContext, useEffect,useState } from 'react'
 import './navigationbar.css'
 import { logo } from '../assest/index'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import Dropdown from 'react-bootstrap/Dropdown';
 import { AuthContext } from '../../AuthProvider';
 import Toast from '../../Toast';
@@ -10,11 +10,13 @@ import { Logout } from '../../pages/Exportfile';
 
 
 const NavigationBar = () => {
+  const navigate  = useNavigate()
   const logout = Logout()
   const {userToken,userData} =useContext(AuthContext);
   const [isLoading,setIsLoading] = useState(false)
 const [dropdown,setDropdown] = useState([])
 const [Navbar,setNavbar] = useState(false)
+const [tracking_id,setTrackingId] = useState("")
 
 
   const getservicefun =async () =>
@@ -57,6 +59,37 @@ const [Navbar,setNavbar] = useState(false)
 
 
   },[])
+
+  const trackorder =async () =>
+  {
+      try{
+          setIsLoading(true)
+          const response= await axios({
+            method: "get",
+           url:`/get_tracking_detail?tracking_id=${tracking_id}`,
+            
+            } )
+           
+           if(response.status===200){
+            const data = response.data;
+            navigate('/track-order',{state:{data}})
+            
+            
+           }
+          }
+         catch(err){
+          const error = err.response.data
+          Toast(error.message);
+          
+       
+       
+         }
+         finally{
+          setIsLoading(false)
+         }
+       
+  
+  }
   return (
     <>
     <div className=''>
@@ -64,7 +97,7 @@ const [Navbar,setNavbar] = useState(false)
    
       <div> 
       <i className="bi bi-telephone-fill telicon" ></i>
-      <a href="tel:8808700087" className='mobile' style={{}}>+91 88-087-000-87 </a>
+      <a href="tel:9916693666" className='mobile' style={{}}>+91 99-166-93-666</a>
       </div>
  
       </div>
@@ -83,7 +116,7 @@ const [Navbar,setNavbar] = useState(false)
 
     <div id="number"> 
       <i className="bi bi-telephone-fill telicon" style={{color:'#088FD8'}}></i>
-      <a href="tel:05384637335" className='mobile' style={{color:'black'}}>+91 88-087-000-87 </a>
+      <a href="tel:9916693666" className='mobile' style={{color:'black'}}>+91 99-166-93-666</a>
       </div>
       <ul className="navbar-nav  mb-2 mb-lg-0 " style={{gridGap: '15px'}}>
      
@@ -97,7 +130,7 @@ const [Navbar,setNavbar] = useState(false)
      
         {dropdown?.map((element)=>{
 
-          return <Link to={'/service1/'+element?.id} data-rr-ui-dropdown-item="" class="d-flex justify-content-between dropdown-item align-item-center drop-service" >
+          return <Link to={'/service/'+element?.slug} data-rr-ui-dropdown-item="" class="d-flex justify-content-between dropdown-item align-item-center drop-service" >
        
        <p >{element?.name}</p>
        <i class="bi bi-caret-right-fill" style={{fontSize:'12px'}}></i>
@@ -116,22 +149,63 @@ const [Navbar,setNavbar] = useState(false)
       </Dropdown.Toggle>
 
       <Dropdown.Menu >
-      <Link to={'/Faq'} data-rr-ui-dropdown-item="" class="d-flex justify-content-between dropdown-item align-item-center drop-service" >
+      <Link to='/gallery' data-rr-ui-dropdown-item="" class="d-flex justify-content-between dropdown-item align-item-center drop-service" >
+       
+       <p >Gallery</p>
+       <i class="bi bi-caret-right-fill" style={{fontSize:'12px'}}></i>
+       
+     </Link>
+      <Link to={'/faq'} data-rr-ui-dropdown-item="" class="d-flex justify-content-between dropdown-item align-item-center drop-service" >
        
        <p >Faq</p>
        <i class="bi bi-caret-right-fill" style={{fontSize:'12px'}}></i>
        
      </Link>
-      <Link to='/Aboutus' data-rr-ui-dropdown-item="" class="d-flex justify-content-between dropdown-item align-item-center drop-service" >
+      <Link to='/about-us' data-rr-ui-dropdown-item="" class="d-flex justify-content-between dropdown-item align-item-center drop-service" >
        
        <p >About</p>
        <i class="bi bi-caret-right-fill" style={{fontSize:'12px'}}></i>
        
      </Link>
+      <Link to='/Contact-us/global' data-rr-ui-dropdown-item="" class="d-flex justify-content-between dropdown-item align-item-center drop-service" >
+       
+       <p >Global Network</p>
+       <i class="bi bi-caret-right-fill" style={{fontSize:'12px'}}></i>
+       
+     </Link>
+      <Link to='/blogs' data-rr-ui-dropdown-item="" class="d-flex justify-content-between dropdown-item align-item-center drop-service" >
+       
+       <p >All Blogs</p>
+       <i class="bi bi-caret-right-fill" style={{fontSize:'12px'}}></i>
+       
+     </Link>
+      <Link to='/Contact-us' data-rr-ui-dropdown-item="" class="d-flex justify-content-between dropdown-item align-item-center drop-service" >
+       
+       <p >Contact Us</p>
+       <i class="bi bi-caret-right-fill" style={{fontSize:'12px'}}></i>
+       
+     </Link>
+    
  
       </Dropdown.Menu>
     </Dropdown>
+           
+    <Dropdown className="nav-nav-item ">
+      <Dropdown.Toggle className='nav-link btn-design link-a' style={{backgroundColor:'#088FD8'}}>
+        Track Order
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu style={{backgroundColor:'#000C24'}}>
+    <div className="track-dropdown center-div " style={{gridGap:20,flexDirection:'column',}}>
+    <p style={{color:'white'}}>keep track your package </p>
+    <input className="getestimate-input" placeholder='Tracking Id' style={{background:'transparent',color:'whitesmoke'}} 
+    value={tracking_id} onChange={(e)=>setTrackingId(e.target.value)}></input>
+    <button onClick={trackorder} className="btn-design">track Order</button>
+    </div>
+      </Dropdown.Menu>
+    </Dropdown>
        
+      
         <li className="nav-item ">
           <Link to="/getestimate1" className="nav-link btn-design link-a" >Get Estimate</Link>
         </li>

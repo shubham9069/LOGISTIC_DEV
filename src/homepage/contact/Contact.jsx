@@ -95,7 +95,7 @@ const Contact = () => {
                 <div className="mt-5">
                     <p className="text-white contactleft-text">
 
-                    You can reach us by phone at +91 - 9311693666 or by email at info@budgetlogisticspackers.com . Alternatively, you can fill out the contact form below and we will get back to you as soon as possible. 
+                    You can reach us by phone at +91 - 9916693666 or by email at info@budgetlogisticspackers.com . Alternatively, you can fill out the contact form below and we will get back to you as soon as possible. 
                     </p>
                 </div>
 

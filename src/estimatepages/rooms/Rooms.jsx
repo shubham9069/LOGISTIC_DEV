@@ -134,7 +134,7 @@ useEffect(()=>{
    
     </div>
     <div className="center-div">
-    <a onClick={()=>navigate('/orderplace',{state:{enquiry_data}})} type="button" className="selected-button link-a " style={{background: '#088FD8',color:'white'}}>place your order</a>
+    <a onClick={()=>navigate('/order-place',{state:{enquiry_data}})} type="button" className="selected-button link-a " style={{background: '#088FD8',color:'white'}}>place your order</a>
     </div>
      </div>
     </div>
